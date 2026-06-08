@@ -67,12 +67,18 @@ export function Experience() {
               <div className="md:w-1/2 md:px-8">
                 <div className="glass rounded-2xl p-5">
                   <ul className="space-y-2 text-sm text-muted-foreground">
-                    {it.bullets.map((b) => (
-                      <li key={b} className="flex gap-2">
-                        <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-neon-cyan" />
-                        <span>{b}</span>
-                      </li>
-                    ))}
+                    {it.bullets.map((b) => {
+                      const text = typeof b === "string" ? b : b.text;
+                      const noIcon = typeof b === "object" && b.noIcon;
+                      return (
+                        <li key={text} className={`flex gap-2 ${noIcon ? "pl-3" : ""}`}>
+                          {!noIcon && (
+                            <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-neon-cyan" />
+                          )}
+                          <span>{text}</span>
+                        </li>
+                      );
+                    })}
                   </ul>
                 </div>
               </div>
