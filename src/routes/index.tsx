@@ -1,29 +1,56 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { NeuralBackground } from "@/components/portfolio/NeuralBackground";
+import { Nav } from "@/components/portfolio/Nav";
+import { Hero } from "@/components/portfolio/Hero";
+import { About } from "@/components/portfolio/About";
+import { Stack } from "@/components/portfolio/Stack";
+import { Projects } from "@/components/portfolio/Projects";
+import { Experience } from "@/components/portfolio/Experience";
+import { Certifications } from "@/components/portfolio/Certifications";
+import { Stats } from "@/components/portfolio/Stats";
+import { Testimonials } from "@/components/portfolio/Testimonials";
+import { Journey } from "@/components/portfolio/Journey";
+import { Contact } from "@/components/portfolio/Contact";
+import { Footer } from "@/components/portfolio/Footer";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Your App" },
-      { name: "description", content: "Replace this with a one-sentence description of your app." },
-      { property: "og:title", content: "Your App" },
-      { property: "og:description", content: "Replace this with a one-sentence description of your app." },
+      { title: "Iara Venâncio Ribeiro · Analista e Desenvolvedora de Sistemas" },
+      {
+        name: "description",
+        content:
+          "Portfólio de Iara Venâncio Ribeiro — Analista e Desenvolvedora de Sistemas. Engenharia de software, full stack, cloud computing e IA aplicada.",
+      },
+      { property: "og:title", content: "Iara Venâncio Ribeiro · Portfólio" },
+      {
+        property: "og:description",
+        content:
+          "Engenharia de software, full stack, cloud e IA. Transformando ideias em soluções digitais inovadoras.",
+      },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
   component: Index,
 });
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
 function Index() {
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
-    </div>
+    <main className="dark relative min-h-screen bg-background text-foreground">
+      <NeuralBackground />
+      <Nav />
+      <Hero />
+      <About />
+      <Stack />
+      <Projects />
+      <Stats />
+      <Experience />
+      <Certifications />
+      <Journey />
+      <Testimonials />
+      <Contact />
+      <Footer />
+    </main>
   );
 }
