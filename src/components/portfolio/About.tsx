@@ -27,10 +27,8 @@ export function About() {
             className="space-y-5 text-lg leading-relaxed text-muted-foreground"
           >
             <p>
-              Sou <span className="text-foreground font-medium">Analista e Desenvolvedora de Sistemas</span>,
-              apaixonada por transformar problemas complexos em soluções
-              digitais elegantes. Minha trajetória combina engenharia de
-              software, automação e a busca constante por inovação.
+              Sou <span className="text-foreground font-medium">estudante de Análise e Desenvolvimento de Sistemas</span>,
+              apaixonada por transformar problemas em soluções digitais. Minha trajetória é marcada pelo aprendizado contínuo em Java, Banco de Dados, automações e desenvolvimento de projetos próprios, sempre buscando unir tecnologia, inovação e impacto real.
             </p>
             <p>
               Trabalho na interseção entre <span className="text-foreground">desenvolvimento full stack</span>,
