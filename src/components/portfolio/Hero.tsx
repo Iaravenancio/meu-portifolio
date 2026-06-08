@@ -36,12 +36,11 @@ export function Hero() {
           className="mx-auto mt-6 max-w-2xl text-base text-muted-foreground sm:text-lg"
         >
           <span className="font-mono text-xs uppercase tracking-[0.3em] text-neon-cyan">
-            Analista & Desenvolvedora de Sistemas
+            Estudante de Análise & Desenvolvimento de Sistemas
           </span>
           <br />
           <span className="mt-3 inline-block">
-            Transformando ideias em soluções digitais inovadoras com engenharia
-            de software, automação e cloud computing.
+            Apaixonada por Java, automações e por transformar problemas em soluções digitais com impacto real.
           </span>
         </motion.p>
 
