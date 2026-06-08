@@ -31,9 +31,9 @@ export function About() {
               apaixonada por transformar problemas em soluções digitais. Minha trajetória é marcada pelo aprendizado contínuo em Java, Banco de Dados, automações e desenvolvimento de projetos próprios, sempre buscando unir tecnologia, inovação e impacto real.
             </p>
             <p>
-              Trabalho na interseção entre <span className="text-foreground">desenvolvimento full stack</span>,
-              cloud computing e inteligência artificial — entregando produtos
-              que escalam, performam e encantam usuários.
+              Tenho grande interesse em <span className="text-foreground">desenvolvimento de software</span>, 
+              automação de processos e criação de soluções que tornem o dia a dia das pessoas e empresas mais eficiente. 
+              Acredito que a tecnologia é uma ferramenta poderosa para gerar valor e resolver desafios de forma inteligente.
             </p>
             <p>
               Meu diferencial está em traduzir requisitos de negócio em
