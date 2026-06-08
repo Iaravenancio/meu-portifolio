@@ -3,9 +3,9 @@ import { SectionHeading } from "./SectionHeading";
 
 const items = [
   {
-    period: "2023 — Atual",
-    role: "Analista e Desenvolvedora de Sistemas Sênior",
-    company: "Tech Innovation Co.",
+    period: "2025 — ATUAL",
+    role: "Início da Jornada em Tecnologia",
+    company: ".",
     bullets: [
       "Liderança técnica em projeto de modernização de sistema legado.",
       "Arquitetura de microsserviços em Spring Boot rodando em AWS.",
