@@ -7,9 +7,7 @@ const items = [
     role: "Início da Jornada em Tecnologia",
     company: ".",
     bullets: [
-      "Liderança técnica em projeto de modernização de sistema legado.",
-      "Arquitetura de microsserviços em Spring Boot rodando em AWS.",
-      "Mentoria técnica de 4 desenvolvedores juniores.",
+      "Iniciei minha graduação em Análise e Desenvolvimento de Sistemas com o objetivo de construir uma carreira voltada à tecnologia, desenvolvimento de software e inovação digital. Desde o início da formação, busquei complementar o aprendizado acadêmico com experiências práticas e projetos próprios.",
     ],
   },
   {
