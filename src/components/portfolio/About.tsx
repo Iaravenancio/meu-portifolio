@@ -36,9 +36,7 @@ export function About() {
               Acredito que a tecnologia é uma ferramenta poderosa para gerar valor e resolver desafios de forma inteligente.
             </p>
             <p>
-              Meu diferencial está em traduzir requisitos de negócio em
-              arquitetura técnica sólida, sempre com obsessão por
-              <span className="text-foreground"> qualidade, performance e experiência</span>.
+              Meu diferencial está na curiosidade, na capacidade de aprender rapidamente e na dedicação para evoluir constantemente. Além da formação acadêmica, desenvolvo projetos próprios envolvendo <span className="text-foreground">Java, Banco de Dados e automações</span>, aplicando na prática os conhecimentos adquiridos durante meus estudos. Estou construindo minha carreira com foco em desenvolvimento, inovação e crescimento profissional, sempre aberta a novos aprendizados e oportunidades.
             </p>
           </motion.div>
 
