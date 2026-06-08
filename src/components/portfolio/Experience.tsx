@@ -26,7 +26,7 @@ const items = [
     company: "Software House",
     bullets: [
       "Sistemas internos em Java e PostgreSQL para clientes corporativos.",
-      "Automação de processos manuais com Python e RPA.",
+      { text: "Automação de processos manuais com Python e RPA.", noIcon: true },
     ],
   },
 ];
