@@ -11,10 +11,14 @@ const items = [
     ],
   },
   {
-    period: "MARÇO/2025 — JULHO/2025",
-    role: "Primeira Experiência Profissional",
-    company: "Fullbar",
-    bullets: [],
+    period: "2021 — 2023",
+    role: "Desenvolvedora Full Stack",
+    company: "Digital Studio",
+    bullets: [
+      "Desenvolvimento de plataforma SaaS com React e Node.js.",
+      "Implantação de pipeline CI/CD reduzindo deploys de 2h para 8min.",
+      "Integração com gateways de pagamento e APIs de terceiros.",
+    ],
   },
   {
     period: "2019 — 2021",
