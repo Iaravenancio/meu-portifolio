@@ -20,7 +20,7 @@ const stack = [
   {
     title: "Automação & Ferramentas",
     color: "from-neon-pink to-neon-purple",
-    items: ["Power Automate", "Power BI ", "Pacote Office", "Inteligência Artificial Generativa", "N8N"],
+    items: ["Power Automate", "Power BI ", "Pacote Office", "Inteligência Artificial Generativa", "N8N", "Make"],
   },
 ];
 
@@ -42,7 +42,7 @@ export function Stack() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.5, delay: i * 0.1 }}
-              className="group relative overflow-hidden rounded-2xl glass p-6 transition hover:-translate-y-1"
+              className="group relative flex h-full flex-col overflow-hidden rounded-2xl glass p-6 transition hover:-translate-y-1"
             >
               <div className={`absolute inset-x-0 top-0 h-px bg-gradient-to-r ${group.color}`} />
               <div className="font-mono text-[10px] uppercase tracking-[0.3em] text-muted-foreground">
