@@ -4,7 +4,7 @@ import { SectionHeading } from "./SectionHeading";
 const items = [
   {
     period: "FEVEREIRO/2025 — ATUAL",
-    role: "Início da Jornada em Tecnologia",
+    role: "Início da Graduação em ADS",
     company: ".",
     bullets: [
       "Iniciei minha graduação em Análise e Desenvolvimento de Sistemas com o objetivo de construir uma carreira voltada à tecnologia, desenvolvimento de software e inovação digital. Desde o início da formação, busquei complementar o aprendizado acadêmico com experiências práticas e projetos próprios.",
@@ -12,7 +12,7 @@ const items = [
   },
   {
     period: "MARÇO/2025 - JULHO/2025",
-    role: "Primeira Experiência Profissional",
+    role: "Estágio em Tecnologia e Processos",
     company: "Fullbar",
     bullets: [
       "Ainda nos primeiros meses da graduação, tive a oportunidade de atuar como estagiária, participando de atividades voltadas à organização de processos internos e documentação operacional. Contribuí na criação e padronização de procedimentos, facilitando o treinamento e a integração de novos colaboradores.\nDurante o estágio, também participei da automação de processos utilizando Power Automate, contribuindo para a otimização de tarefas repetitivas e para o aumento da eficiência operacional da equipe. Essa experiência despertou ainda mais meu interesse por automações, tecnologia e soluções que geram impacto real.",
@@ -20,7 +20,7 @@ const items = [
   },
   {
     period: "FEVEREIRO/2025 — ATUAL",
-    role: "Desenvolvimento de Projetos e Especialização em Java e Banco de Dados",
+    role: "Desenvolvimento e Especialização",
     company: "",
     bullets: [
       "Atualmente sigo aprofundando meus conhecimentos em Java, Banco de Dados, APIs, automações e desenvolvimento de projetos próprios. Estou focada em transformar conhecimento em prática, construir soluções úteis e dar os próximos passos na minha carreira como desenvolvedora.",
