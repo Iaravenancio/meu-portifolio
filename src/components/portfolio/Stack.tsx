@@ -3,24 +3,24 @@ import { SectionHeading } from "./SectionHeading";
 
 const stack = [
   {
-    title: "Frontend",
+    title: "Desenvolvimento Web",
     color: "from-neon-blue to-neon-cyan",
-    items: ["React", "Next.js", "TypeScript", "Tailwind CSS", "Vue"],
+    items: ["HTML5", "CSS3", "JavaScript", "Git", "GitHub"],
   },
   {
     title: "Backend",
     color: "from-neon-purple to-neon-pink",
-    items: ["Java", "Spring Boot", "Node.js", "Python", "REST / GraphQL"],
+    items: ["Java", "JDBC", "APIs REST (em aprendizado)", "Lógica de Programação", "Spring Boot "],
   },
   {
     title: "Banco de Dados",
     color: "from-neon-cyan to-neon-blue",
-    items: ["PostgreSQL", "MySQL", "MongoDB", "Redis"],
+    items: ["PostgreSQL", "MySQL", "Modelagem de Dados", "Consultas e Relatorios"],
   },
   {
-    title: "Cloud & DevOps",
+    title: "Automação & Ferramentas",
     color: "from-neon-pink to-neon-purple",
-    items: ["AWS", "Azure", "Docker", "Kubernetes", "CI/CD"],
+    items: ["Power Automate", "Power BI ", "Pacote Office", "Inteligência Artificial Generativa", "N8N"],
   },
 ];
 
@@ -31,7 +31,7 @@ export function Stack() {
         <SectionHeading
           eyebrow="stack tecnológica"
           title={<>Ferramentas que uso para <span className="text-gradient">construir</span>.</>}
-          description="Um arsenal moderno selecionado para entregar produtos performáticos, escaláveis e resilientes."
+          description="Tecnologias e ferramentas que utilizo nos meus estudos, projetos e automações. Uma combinação de desenvolvimento, banco de dados e soluções que me ajudam a transformar ideias em aplicações reais."
         />
 
         <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
