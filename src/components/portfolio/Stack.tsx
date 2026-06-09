@@ -20,7 +20,7 @@ const stack = [
   {
     title: "Automação & Ferramentas",
     color: "from-neon-pink to-neon-purple",
-    items: ["Power Automate", "Power BI ", "Pacote Office", "Inteligência Artificial Generativa", "N8N"],
+    items: ["Power Automate", "Power BI ", "Pacote Office", "Inteligência Artificial Generativa", "N8N", "Make"],
   },
 ];
 
