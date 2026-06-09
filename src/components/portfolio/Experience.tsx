@@ -3,7 +3,7 @@ import { SectionHeading } from "./SectionHeading";
 
 const items = [
   {
-    period: "2025 — ATUAL",
+    period: "FEVEREIRO/2025 — ATUAL",
     role: "Início da Jornada em Tecnologia",
     company: ".",
     bullets: [
@@ -15,16 +15,15 @@ const items = [
     role: "Primeira Experiência Profissional",
     company: "Fullbar",
     bullets: [
-      "Ainda nos primeiros meses da graduação, tive a oportunidade de atuar como estagiária, participando de atividades voltadas à organização de processos internos e documentação operacional. Contribuí na criação e padronização de procedimentos, facilitando o treinamento e a integração de novos colaboradores.",
+      "Ainda nos primeiros meses da graduação, tive a oportunidade de atuar como estagiária, participando de atividades voltadas à organização de processos internos e documentação operacional. Contribuí na criação e padronização de procedimentos, facilitando o treinamento e a integração de novos colaboradores.\nDurante o estágio, também participei da automação de processos utilizando Power Automate, contribuindo para a otimização de tarefas repetitivas e para o aumento da eficiência operacional da equipe. Essa experiência despertou ainda mais meu interesse por automações, tecnologia e soluções que geram impacto real.",
     ],
   },
   {
-    period: "2019 — 2021",
-    role: "Desenvolvedora de Sistemas",
-    company: "Software House",
+    period: "FEVEREIRO/2025 — ATUAL",
+    role: "Desenvolvimento de Projetos e Especialização em Java e Banco de Dados",
+    company: "",
     bullets: [
-      "Sistemas internos em Java e PostgreSQL para clientes corporativos.",
-      { text: "Automação de processos manuais com Python e RPA.", noIcon: true },
+      "Atualmente sigo aprofundando meus conhecimentos em Java, Banco de Dados, APIs, automações e desenvolvimento de projetos próprios. Estou focada em transformar conhecimento em prática, construir soluções úteis e dar os próximos passos na minha carreira como desenvolvedora.",
     ],
   },
 ];
