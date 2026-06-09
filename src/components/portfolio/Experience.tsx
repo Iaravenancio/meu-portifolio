@@ -11,13 +11,11 @@ const items = [
     ],
   },
   {
-    period: "2021 — 2023",
-    role: "Desenvolvedora Full Stack",
-    company: "Digital Studio",
+    period: "MARÇO/2025 - JULHO/2025",
+    role: "Primeira Experiência Profissional",
+    company: "Fullbar",
     bullets: [
-      "Desenvolvimento de plataforma SaaS com React e Node.js.",
-      "Implantação de pipeline CI/CD reduzindo deploys de 2h para 8min.",
-      "Integração com gateways de pagamento e APIs de terceiros.",
+      "Ainda nos primeiros meses da graduação, tive a oportunidade de atuar como estagiária, participando de atividades voltadas à organização de processos internos e documentação operacional. Contribuí na criação e padronização de procedimentos, facilitando o treinamento e a integração de novos colaboradores.",
     ],
   },
   {
