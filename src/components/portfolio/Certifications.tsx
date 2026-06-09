@@ -3,12 +3,12 @@ import { Award } from "lucide-react";
 import { SectionHeading } from "./SectionHeading";
 
 const certs = [
-  { name: "AWS Certified Solutions Architect", issuer: "Amazon Web Services", year: "2024" },
-  { name: "Azure Fundamentals AZ-900", issuer: "Microsoft", year: "2023" },
-  { name: "Oracle Java SE 17 Developer", issuer: "Oracle", year: "2023" },
-  { name: "Scrum Master Professional (PSM I)", issuer: "Scrum.org", year: "2022" },
-  { name: "Especialização em Engenharia de Software", issuer: "USP", year: "2022" },
-  { name: "MongoDB Developer Path", issuer: "MongoDB University", year: "2021" },
+  { name: "Lógica de Programação com JavaScript", issuer: "Desenvolvimento do raciocínio lógico, estruturas de decisão, repetição e resolução de problemas.", year: "Alura - 2025" },
+  { name: "Git e GitHub", issuer: "Versionamento de código, colaboração em equipe e gerenciamento de projetos.", year: "Alura - 2025" },
+  { name: "Desenvolvimento Web e Prototipação", issuer: "Certificado de Qualificação Profissional em Desenvolvimento e Designer Web 2.0.", year: "FIAP - 2025" },
+  { name: "Análise de Sistemas e Prototipação Web", issuer: "Certificado de Qualificação Profissional em Análise de Sistemas e Prototipação Web.", year: "FIAP - 2025" },
+  { name: "Banco de Dados MySQL", issuer: "Modelagem, consultas SQL, relacionamentos e manipulação de dados.", year: "Curso em Vídeo - 2025" },
+  { name: "Engenharia de Prompt para IA", issuer: "Fundamentos de IA generativa, prompting e aplicações práticas.", year: "Curso em Vídeo - 2025" },
 ];
 
 export function Certifications() {
