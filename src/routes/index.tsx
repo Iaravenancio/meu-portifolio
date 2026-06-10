@@ -47,7 +47,6 @@ function Index() {
       <Stats />
       <Experience />
       <Certifications />
-      <Journey />
       <Testimonials />
       <Contact />
       <Footer />
