@@ -41,7 +41,6 @@ function Index() {
       <About />
       <Stack />
       <Projects />
-      <Stats />
       <Experience />
       <Certifications />
       <Contact />
