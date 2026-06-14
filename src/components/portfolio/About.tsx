@@ -48,7 +48,7 @@ export function About() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: i * 0.08 }}
-                className="group relative flex flex-col items-center overflow-hidden rounded-2xl glass p-6 text-center transition hover:-translate-y-1 hover:border-white/20"
+                className="group relative flex h-full flex-col items-center justify-center overflow-hidden rounded-2xl glass p-6 text-center transition hover:-translate-y-1 hover:border-white/20"
               >
                 <div className="mb-4 grid h-12 w-12 place-items-center rounded-xl bg-gradient-to-br from-neon-blue/20 to-neon-purple/20 text-neon-cyan ring-1 ring-white/10">
                   <p.icon className="h-6 w-6" />
