@@ -40,7 +40,7 @@ export function About() {
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-2 gap-5">
             {pillars.map((p, i) => (
               <motion.div
                 key={p.title}
@@ -48,13 +48,13 @@ export function About() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: i * 0.08 }}
-                className="group relative overflow-hidden rounded-2xl glass p-5 transition hover:-translate-y-1 hover:border-white/20"
+                className="group relative flex flex-col items-center overflow-hidden rounded-2xl glass p-6 text-center transition hover:-translate-y-1 hover:border-white/20"
               >
-                <div className="mb-3 grid h-10 w-10 place-items-center rounded-lg bg-gradient-to-br from-neon-blue/20 to-neon-purple/20 text-neon-cyan ring-1 ring-white/10">
-                  <p.icon className="h-5 w-5" />
+                <div className="mb-4 grid h-12 w-12 place-items-center rounded-xl bg-gradient-to-br from-neon-blue/20 to-neon-purple/20 text-neon-cyan ring-1 ring-white/10">
+                  <p.icon className="h-6 w-6" />
                 </div>
-                <div className="font-display text-sm font-semibold">{p.title}</div>
-                <div className="mt-1 text-xs text-muted-foreground">{p.text}</div>
+                <div className="font-display text-lg font-semibold">{p.title}</div>
+                <div className="mt-2 text-sm leading-relaxed text-muted-foreground">{p.text}</div>
                 <div className="pointer-events-none absolute -right-10 -top-10 h-32 w-32 rounded-full bg-neon-purple/10 blur-2xl transition group-hover:bg-neon-purple/20" />
               </motion.div>
             ))}
