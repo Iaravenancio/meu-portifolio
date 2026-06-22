@@ -4,44 +4,25 @@ import { SectionHeading } from "./SectionHeading";
 
 const projects = [
   {
-    name: "NeuralCRM",
-    tag: "SaaS · IA",
+    name: "Reciclagem API",
+    tag: "ESG · Spring Boot · REST",
     description:
-      "Plataforma de CRM com classificação automática de leads usando modelos de linguagem.",
-    problem: "Times comerciais perdiam horas qualificando leads manualmente.",
-    result: "Redução de 60% no tempo de qualificação e +28% em conversão.",
-    tech: ["Next.js", "TypeScript", "PostgreSQL", "OpenAI"],
-    accent: "from-neon-blue to-neon-purple",
-  },
-  {
-    name: "CloudPay Gateway",
-    tag: "Fintech · Microsserviços",
-    description:
-      "Gateway de pagamentos resiliente com fila de eventos e roteamento inteligente.",
-    problem: "Falhas em adquirentes derrubavam o checkout em horários de pico.",
-    result: "99,98% de disponibilidade e 3x mais throughput sob carga.",
-    tech: ["Java", "Spring Boot", "Kafka", "AWS"],
-    accent: "from-neon-purple to-neon-pink",
-  },
-  {
-    name: "DataPulse Dashboard",
-    tag: "Analytics · BI",
-    description:
-      "Dashboard em tempo real para acompanhar KPIs operacionais de e-commerce.",
-    problem: "Decisões tomadas com base em relatórios atrasados em 24h.",
-    result: "Tomada de decisão em tempo real e -18% de churn operacional.",
-    tech: ["React", "Node.js", "MongoDB", "Docker"],
-    accent: "from-neon-cyan to-neon-blue",
-  },
-  {
-    name: "AutoFlow",
-    tag: "Automação · RPA",
-    description:
-      "Engine de automação para integrar sistemas legados via API e web scraping.",
-    problem: "Processos manuais consumiam 40h/semana do time financeiro.",
-    result: "Automação de 92% das rotinas e ROI em menos de 3 meses.",
-    tech: ["Python", "FastAPI", "Redis", "Azure"],
-    accent: "from-neon-pink to-neon-cyan",
+      "API RESTful desenvolvida em Java com Spring Boot para gerenciamento de pontos de coleta de resíduos recicláveis, alinhada aos princípios ESG.",
+    problem:
+      "Falta de padronização e centralização no cadastro e consulta de pontos de coleta de resíduos recicláveis.",
+    result:
+      "CRUD completo de pontos de coleta com validação, segurança, documentação Swagger e respostas HTTP RESTful.",
+    tech: [
+      "Java 21",
+      "Spring Boot",
+      "Spring Data JPA",
+      "Spring Security",
+      "Swagger",
+      "Flyway",
+      "Docker",
+    ],
+    accent: "from-neon-green to-neon-cyan",
+    repo: "https://github.com/Iaravenancio/reciclagem-api.git",
   },
 ];
 
@@ -105,13 +86,17 @@ export function Projects() {
 
               <div className="mt-6 flex items-center gap-2 border-t border-white/5 pt-4 text-xs">
                 <a
-                  href="#"
+                  href={p.repo}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="inline-flex items-center gap-1.5 rounded-full bg-foreground px-3 py-1.5 font-semibold text-background transition hover:opacity-90"
                 >
-                  Ver case <ArrowUpRight className="h-3 w-3" />
+                  Ver repositório <ArrowUpRight className="h-3 w-3" />
                 </a>
                 <a
-                  href="#"
+                  href={p.repo}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="inline-flex items-center gap-1.5 rounded-full border border-white/10 px-3 py-1.5 font-medium text-muted-foreground transition hover:text-foreground"
                 >
                   <Github className="h-3 w-3" /> Código
