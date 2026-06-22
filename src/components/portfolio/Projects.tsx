@@ -36,7 +36,7 @@ export function Projects() {
           description="Uma seleção de projetos onde combinei tecnologia e estratégia para resolver problemas concretos."
         />
 
-        <div className="grid gap-6 md:grid-cols-2">
+        <div className={`grid gap-6 ${projects.length === 1 ? "place-items-center" : "md:grid-cols-2"}`}>
           {projects.map((p, i) => (
             <motion.article
               key={p.name}
@@ -44,7 +44,7 @@ export function Projects() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-60px" }}
               transition={{ duration: 0.6, delay: (i % 2) * 0.1 }}
-              className="group relative flex flex-col overflow-hidden rounded-3xl glass p-6 transition hover:-translate-y-1.5 hover:border-white/20"
+              className={`group relative flex flex-col overflow-hidden rounded-3xl glass p-6 transition hover:-translate-y-1.5 hover:border-white/20 ${projects.length === 1 ? "w-full max-w-3xl" : ""}`}
             >
               {/* visual */}
               <div className="relative mb-6 h-44 overflow-hidden rounded-2xl border border-white/10 bg-[radial-gradient(circle_at_30%_20%,oklch(0.18_0.05_270),oklch(0.08_0.02_270))]">
