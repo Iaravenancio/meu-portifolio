@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ArrowUpRight, Github } from "lucide-react";
+import { ArrowUpRight, Github, Globe } from "lucide-react";
 import { SectionHeading } from "./SectionHeading";
 
 const projects = [
@@ -23,6 +23,32 @@ const projects = [
     ],
     accent: "from-neon-green to-neon-cyan",
     repo: "https://github.com/Iaravenancio/reciclagem-api.git",
+    link: "https://github.com/Iaravenancio/reciclagem-api.git",
+    ctaLabel: "Ver repositório",
+  },
+  {
+    name: "Elegance Moda Feminina",
+    tag: "E-commerce · React · Tailwind",
+    description:
+      "Website responsivo para uma boutique de moda feminina, com foco em experiência do usuário, apresentação de produtos, navegação intuitiva e identidade visual premium.",
+    problem:
+      "Necessidade de uma vitrine digital elegante que representasse a marca e facilitasse a navegação e conversão de clientes.",
+    result:
+      "Loja online responsiva com identidade visual premium, navegação intuitiva e apresentação otimizada de produtos.",
+    tech: [
+      "React",
+      "TypeScript",
+      "Vite",
+      "Tailwind CSS",
+      "TanStack Router",
+      "shadcn/ui",
+      "HTML5",
+      "CSS3",
+    ],
+    accent: "from-neon-pink to-neon-purple",
+    repo: "",
+    link: "https://elegance-modafeminina.netlify.app",
+    ctaLabel: "Ver projeto",
   },
 ];
 
