@@ -112,21 +112,32 @@ export function Projects() {
 
               <div className="mt-6 flex items-center gap-2 border-t border-white/5 pt-4 text-xs">
                 <a
-                  href={p.repo}
+                  href={p.link}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-1.5 rounded-full bg-foreground px-3 py-1.5 font-semibold text-background transition hover:opacity-90"
                 >
-                  Ver repositório <ArrowUpRight className="h-3 w-3" />
+                  {p.ctaLabel} <ArrowUpRight className="h-3 w-3" />
                 </a>
-                <a
-                  href={p.repo}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 rounded-full border border-white/10 px-3 py-1.5 font-medium text-muted-foreground transition hover:text-foreground"
-                >
-                  <Github className="h-3 w-3" /> Código
-                </a>
+                {p.repo ? (
+                  <a
+                    href={p.repo}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1.5 rounded-full border border-white/10 px-3 py-1.5 font-medium text-muted-foreground transition hover:text-foreground"
+                  >
+                    <Github className="h-3 w-3" /> Código
+                  </a>
+                ) : (
+                  <a
+                    href={p.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1.5 rounded-full border border-white/10 px-3 py-1.5 font-medium text-muted-foreground transition hover:text-foreground"
+                  >
+                    <Globe className="h-3 w-3" /> Demo
+                  </a>
+                )}
               </div>
             </motion.article>
           ))}
