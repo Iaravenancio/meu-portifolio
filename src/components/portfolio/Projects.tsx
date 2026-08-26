@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ArrowUpRight, Github } from "lucide-react";
+import { ArrowUpRight, Github, Globe } from "lucide-react";
 import { SectionHeading } from "./SectionHeading";
 
 const projects = [
@@ -23,6 +23,32 @@ const projects = [
     ],
     accent: "from-neon-green to-neon-cyan",
     repo: "https://github.com/Iaravenancio/reciclagem-api.git",
+    link: "https://github.com/Iaravenancio/reciclagem-api.git",
+    ctaLabel: "Ver repositório",
+  },
+  {
+    name: "Elegance Moda Feminina",
+    tag: "E-commerce · React · Tailwind",
+    description:
+      "Website responsivo para uma boutique de moda feminina, com foco em experiência do usuário, apresentação de produtos, navegação intuitiva e identidade visual premium.",
+    problem:
+      "Necessidade de uma vitrine digital elegante que representasse a marca e facilitasse a navegação e conversão de clientes.",
+    result:
+      "Loja online responsiva com identidade visual premium, navegação intuitiva e apresentação otimizada de produtos.",
+    tech: [
+      "React",
+      "TypeScript",
+      "Vite",
+      "Tailwind CSS",
+      "TanStack Router",
+      "shadcn/ui",
+      "HTML5",
+      "CSS3",
+    ],
+    accent: "from-neon-pink to-neon-purple",
+    repo: "",
+    link: "https://elegance-modafeminina.netlify.app",
+    ctaLabel: "Ver projeto",
   },
 ];
 
@@ -86,21 +112,32 @@ export function Projects() {
 
               <div className="mt-6 flex items-center gap-2 border-t border-white/5 pt-4 text-xs">
                 <a
-                  href={p.repo}
+                  href={p.link}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-1.5 rounded-full bg-foreground px-3 py-1.5 font-semibold text-background transition hover:opacity-90"
                 >
-                  Ver repositório <ArrowUpRight className="h-3 w-3" />
+                  {p.ctaLabel} <ArrowUpRight className="h-3 w-3" />
                 </a>
-                <a
-                  href={p.repo}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 rounded-full border border-white/10 px-3 py-1.5 font-medium text-muted-foreground transition hover:text-foreground"
-                >
-                  <Github className="h-3 w-3" /> Código
-                </a>
+                {p.repo ? (
+                  <a
+                    href={p.repo}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1.5 rounded-full border border-white/10 px-3 py-1.5 font-medium text-muted-foreground transition hover:text-foreground"
+                  >
+                    <Github className="h-3 w-3" /> Código
+                  </a>
+                ) : (
+                  <a
+                    href={p.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1.5 rounded-full border border-white/10 px-3 py-1.5 font-medium text-muted-foreground transition hover:text-foreground"
+                  >
+                    <Globe className="h-3 w-3" /> Demo
+                  </a>
+                )}
               </div>
             </motion.article>
           ))}
