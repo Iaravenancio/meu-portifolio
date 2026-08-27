@@ -38,7 +38,7 @@ function Index() {
       <NeuralBackground />
       <Nav />
       <Hero />
-      <About />
+      
       <Stack />
       <Projects />
       <Experience />
