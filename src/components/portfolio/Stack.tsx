@@ -30,7 +30,7 @@ const stack: StackGroup[] = [
     subgroups: [
       {
         label: "Inteligência Artificial",
-        items: ["IA Generativa", "Engenharia de Prompts", "Cursor", "Lovable"],
+        items: ["IA Generativa", "Engenharia de Prompts", "Replit", "Lovable"],
       },
       {
         label: "Automação",
