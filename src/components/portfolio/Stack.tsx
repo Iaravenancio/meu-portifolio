@@ -15,7 +15,7 @@ const stack = [
   {
     title: "Banco de Dados",
     color: "from-neon-cyan to-neon-blue",
-    items: ["PostgreSQL", "MySQL", "Modelagem de Dados", "Consultas e Relatorios"],
+    items: ["PostgreSQL", "MySQL", "Modelagem de Dados", "Consultas e Relatorios", "Novo item"],
   },
   {
     title: "Automação & Ferramentas",
