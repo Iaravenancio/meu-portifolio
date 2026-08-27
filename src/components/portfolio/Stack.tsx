@@ -10,7 +10,7 @@ const stack = [
   {
     title: "Backend",
     color: "from-neon-purple to-neon-pink",
-    items: ["Java", "JDBC", "APIs REST ", "Lógica de Programação", "Spring Boot "],
+    items: ["Java", "JDBC", "APIs REST ", "Lógica de Programação", "Spring Boot "],
   },
   {
     title: "Banco de Dados",
@@ -18,18 +18,9 @@ const stack = [
     items: ["PostgreSQL", "MySQL", "Modelagem de Dados", "Consultas e Relatorios", "SQL"],
   },
   {
-    title: "IA & Automação",
+    title: "Automação & Ferramentas",
     color: "from-neon-pink to-neon-purple",
-    groups: [
-      {
-        label: "Inteligência Artificial",
-        items: ["IA Generativa", "Engenharia de Prompts", "Cursor", "Lovable"],
-      },
-      {
-        label: "Automação",
-        items: ["n8n", "Make", "Power Automate"],
-      },
-    ],
+    items: ["Power Automate", "Power BI ", "Pacote Office", "Inteligência Artificial Generativa", "N8N", "Make"],
   },
 ];
 
@@ -40,7 +31,7 @@ export function Stack() {
         <SectionHeading
           eyebrow="stack tecnológica"
           title={<>Ferramentas que uso para <span className="text-gradient">construir</span>.</>}
-          description="Tecnologias e ferramentas que utilizo nos meus estudos, projetos e automações. Uma combinação de desenvolvimento, banco de dados, inteligência artificial e soluções que me ajudam a transformar ideias em aplicações reais."
+          description="Tecnologias e ferramentas que utilizo nos meus estudos, projetos e automações. Uma combinação de desenvolvimento, banco de dados e soluções que me ajudam a transformar ideias em aplicações reais."
         />
 
         <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
@@ -58,42 +49,17 @@ export function Stack() {
                 0{i + 1}
               </div>
               <h3 className="mt-2 font-display text-lg font-semibold">{group.title}</h3>
-
-              {"groups" in group && group.groups ? (
-                <div className="mt-5 space-y-4">
-                  {group.groups.map((sub) => (
-                    <div key={sub.label}>
-                      <div className="font-mono text-[10px] uppercase tracking-[0.2em] text-foreground/70">
-                        {sub.label}
-                      </div>
-                      <ul className="mt-2 space-y-2">
-                        {sub.items.map((item) => (
-                          <li
-                            key={item}
-                            className="flex items-center gap-2 text-sm text-muted-foreground transition group-hover:text-foreground"
-                          >
-                            <span className={`h-1 w-1 rounded-full bg-gradient-to-r ${group.color}`} />
-                            {item}
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  ))}
-                </div>
-              ) : (
-                <ul className="mt-5 space-y-2">
-                  {group.items.map((item) => (
-                    <li
-                      key={item}
-                      className="flex items-center gap-2 text-sm text-muted-foreground transition group-hover:text-foreground"
-                    >
-                      <span className={`h-1 w-1 rounded-full bg-gradient-to-r ${group.color}`} />
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-              )}
-
+              <ul className="mt-5 space-y-2">
+                {group.items.map((item) => (
+                  <li
+                    key={item}
+                    className="flex items-center gap-2 text-sm text-muted-foreground transition group-hover:text-foreground"
+                  >
+                    <span className={`h-1 w-1 rounded-full bg-gradient-to-r ${group.color}`} />
+                    {item}
+                  </li>
+                ))}
+              </ul>
               <div className={`pointer-events-none absolute -bottom-16 -right-16 h-40 w-40 rounded-full bg-gradient-to-br ${group.color} opacity-0 blur-3xl transition group-hover:opacity-20`} />
             </motion.div>
           ))}
