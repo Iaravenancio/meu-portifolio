@@ -10,7 +10,7 @@ const stack = [
   {
     title: "Backend",
     color: "from-neon-purple to-neon-pink",
-    items: ["Java", "JDBC", "APIs REST (em aprendizado)", "Lógica de Programação", "Spring Boot "],
+    items: ["Java", "JDBC", "APIs REST ", "Lógica de Programação", "Spring Boot "],
   },
   {
     title: "Banco de Dados",
