@@ -1,13 +1,5 @@
 import { motion } from "framer-motion";
-import { Brain, Code2, Rocket, Target } from "lucide-react";
 import { SectionHeading } from "./SectionHeading";
-
-const pillars = [
-  { icon: Code2, title: "Engenharia", text: "Código limpo, escalável e testado." },
-  { icon: Brain, title: "Inteligência", text: "IA aplicada a problemas reais." },
-  { icon: Rocket, title: "Impacto", text: "Produtos que entregam valor real." },
-  { icon: Target, title: "Foco", text: "Resultado mensurável a cada sprint." },
-];
 
 export function About() {
   return (
@@ -18,7 +10,7 @@ export function About() {
           title={<>Construindo o <span className="text-gradient">futuro digital</span> com código.</>}
         />
 
-        <div className="grid gap-12 lg:grid-cols-[1.2fr_1fr] lg:gap-16">
+        <div className="mx-auto max-w-3xl">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
