@@ -8,7 +8,7 @@ export function SectionHeading({
   align = "left",
 }: {
   eyebrow: string;
-  title: ReactNode;
+  title?: ReactNode;
   description?: string;
   align?: "left" | "center";
 }) {
@@ -23,9 +23,11 @@ export function SectionHeading({
       <span className="font-mono text-xs uppercase tracking-[0.3em] text-neon-cyan">
         / {eyebrow}
       </span>
-      <h2 className="mt-3 font-display text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
-        {title}
-      </h2>
+      {title && (
+        <h2 className="mt-3 font-display text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
+          {title}
+        </h2>
+      )}
       {description && (
         <p className="mt-4 text-muted-foreground">{description}</p>
       )}
