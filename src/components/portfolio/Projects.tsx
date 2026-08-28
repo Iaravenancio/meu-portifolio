@@ -58,8 +58,8 @@ export function Projects() {
       <div className="mx-auto max-w-6xl">
         <SectionHeading
           eyebrow="projetos selecionados"
-          title={<>Cases que entregam <span className="text-gradient">resultado real</span>.</>}
-          description="Uma seleção de projetos onde combinei tecnologia e estratégia para resolver problemas concretos."
+          title={<>Projetos que transformam ideias em <span className="text-gradient">soluções</span>.</>}
+          description="Uma seleção de projetos desenvolvidos para colocar meus conhecimentos em prática e transformar ideias em aplicações reais."
         />
 
         <div className={`grid gap-6 ${projects.length === 1 ? "place-items-center" : "md:grid-cols-2"}`}>
