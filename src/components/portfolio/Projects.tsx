@@ -50,6 +50,28 @@ const projects = [
     link: "https://elegance-modafeminina.netlify.app",
     ctaLabel: "Ver projeto",
   },
+  {
+    name: "Swift E-commerce · Challenge FIAP",
+    tag: "E-commerce · JavaScript · GitHub Pages",
+    description:
+      "Aplicação web de e-commerce desenvolvida para o Challenge FIAP, simulando a experiência de compra da Swift com catálogo de produtos, carrinho, autenticação simulada e finalização de compra.",
+    problem:
+      "Criar uma experiência de e-commerce completa e responsiva utilizando apenas tecnologias web fundamentais.",
+    result:
+      "Site multi-páginas responsivo com navegação por categorias, carrinho persistido em localStorage, cadastro/login simulado e checkout, publicado no GitHub Pages.",
+    tech: [
+      "HTML5",
+      "CSS3",
+      "JavaScript",
+      "localStorage",
+      "Responsividade",
+      "GitHub Pages",
+    ],
+    accent: "from-neon-cyan to-neon-purple",
+    repo: "https://github.com/Iaravenancio/Challenge_FIAP",
+    link: "https://iaravenancio.github.io/Challenge_FIAP/",
+    ctaLabel: "Ver projeto",
+  },
 ];
 
 export function Projects() {
