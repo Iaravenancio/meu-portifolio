@@ -72,6 +72,30 @@ const projects = [
     link: "https://iaravenancio.github.io/Challenge_FIAP/",
     ctaLabel: "Ver projeto",
   },
+  {
+    name: "InovaGAB · Backend",
+    tag: "Challenge Grupo Águia Branca · Spring Boot · MongoDB",
+    description:
+      "API REST desenvolvida em Java com Spring Boot para a plataforma InovaGAB, de gestão da inovação corporativa, permitindo registro e acompanhamento de ideias, gerenciamento de estratégias e projetos e visualização de indicadores.",
+    problem:
+      "Estruturar o fluxo de inovação corporativa com três perfis (Operador, Gestor e Líder), do registro de ideias à aprovação, projetos e indicadores.",
+    result:
+      "Backend independente com autenticação JWT, controle de acesso por perfil, persistência no MongoDB Atlas, validação de dados e integração com Gemini API para funcionalidades de IA.",
+    tech: [
+      "Java",
+      "Spring Boot",
+      "Spring Security",
+      "JWT",
+      "MongoDB Atlas",
+      "Bean Validation",
+      "Gemini API",
+      "Maven",
+    ],
+    accent: "from-neon-purple to-neon-green",
+    repo: "https://github.com/Iaravenancio/InovaGAB-Backend",
+    link: "https://github.com/Iaravenancio/InovaGAB-Backend",
+    ctaLabel: "Ver repositório",
+  },
 ];
 
 export function Projects() {
