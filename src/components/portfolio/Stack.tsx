@@ -22,7 +22,7 @@ const stack: StackGroup[] = [
   {
     title: "Banco de Dados",
     color: "from-neon-cyan to-neon-blue",
-    items: ["PostgreSQL", "MySQL", "Modelagem de Dados", "Consultas e Relatorios", "SQL"],
+    items: ["PostgreSQL", "MySQL", "MongoDB", "Modelagem de Dados", "Consultas e Relatorios", "SQL"],
   },
   {
     title: "IA & Automação",
