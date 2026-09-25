@@ -21,7 +21,6 @@ export default defineConfig({
     prerender: { enabled: true, autoStaticPathsDiscovery: false },
   },
 
-  nitro: {
-    preset: "static",
-  },
+  // No server runtime: output is plain static files in dist/client.
+  nitro: false,
 });
