@@ -1,9 +1,9 @@
 [build]
   command = "npm run build"
-  publish = ".output/public"
+  publish = "dist/client"
 
-# SPA fallback: any unknown route serves the app shell
+# SPA fallback: any unknown path serves the app
 [[redirects]]
   from = "/*"
-  to = "/_shell.html"
+  to = "/index.html"
   status = 200
