@@ -7,14 +7,20 @@
 
 import { defineConfig } from "@lovable.dev/vite-tanstack-config";
 
+// Static / SPA build for Netlify: the app shell and "/" are prerendered to
+// plain HTML files; no server runtime is needed at hosting time.
 export default defineConfig({
   tanstackStart: {
     server: {
       entry: "server",
     },
+    spa: {
+      enabled: true,
+    },
+    pages: [{ path: "/" }],
+    prerender: { enabled: true, autoStaticPathsDiscovery: false },
   },
 
-  nitro: {
-    preset: "netlify",
-  },
+  // No server runtime: output is plain static files in dist/client.
+  nitro: false,
 });
