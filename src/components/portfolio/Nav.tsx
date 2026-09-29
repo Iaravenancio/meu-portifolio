@@ -84,12 +84,7 @@ export function Nav() {
           transition={{ type: "spring", stiffness: 300, damping: 18 }}
         >
           <span className="relative z-10">Fale comigo</span>
-          <motion.span
-            className="absolute inset-0 bg-gradient-to-r from-neon-blue to-neon-purple opacity-0"
-            initial={false}
-            whileHover={{ opacity: 1 }}
-            transition={{ duration: 0.3 }}
-          />
+          <span className="absolute inset-0 bg-gradient-to-r from-neon-blue to-neon-purple opacity-0 transition group-hover:opacity-100" />
         </motion.a>
       </div>
     </motion.header>
