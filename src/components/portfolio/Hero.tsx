@@ -17,7 +17,7 @@ export function Hero() {
     const el = nameRef.current;
     if (!el) return;
 
-    const chars = el.querySelectorAll<HTMLElement>("[data-name-char]");
+    const chars = el.querySelectorAll<HTMLElement>("[data-name-char], [data-name-word]");
     const ctx = gsap.context(() => {
       const tl = gsap.timeline({ delay: 0.15 });
       tl.from(chars, {
@@ -85,17 +85,13 @@ export function Hero() {
             ))}
           </span>
           <br />
-          <span aria-hidden="true" className="text-gradient inline-block [perspective:600px]">
-            {splitName(NAME_LINE_2).map(({ char, key }) => (
-              <span
-                key={key}
-                data-name-char
-                className="inline-block will-change-transform"
-                style={{ transformOrigin: "50% 100%" }}
-              >
-                {char}
-              </span>
-            ))}
+          <span
+            aria-hidden="true"
+            data-name-word
+            className="text-gradient inline-block will-change-transform"
+            style={{ transformOrigin: "50% 100%" }}
+          >
+            {NAME_LINE_2}
           </span>
         </motion.h1>
 
