@@ -1,53 +1,11 @@
-import { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
-import { gsap } from "gsap";
+import { StrokeText } from "./StrokeText";
 import { ArrowDown, Download, Github, Linkedin, Sparkles } from "lucide-react";
 
 const NAME_LINE_1 = "Iara Venâncio";
 const NAME_LINE_2 = "Ribeiro";
 
-function splitName(name: string) {
-  return name.split("").map((char, i) => ({ char, key: `${i}-${char}` }));
-}
-
 export function Hero() {
-  const nameRef = useRef<HTMLHeadingElement>(null);
-
-  useEffect(() => {
-    const el = nameRef.current;
-    if (!el) return;
-
-    const chars = el.querySelectorAll<HTMLElement>("[data-name-char], [data-name-word]");
-    const ctx = gsap.context(() => {
-      const tl = gsap.timeline({ delay: 0.15 });
-      tl.from(chars, {
-        y: 42,
-        opacity: 0,
-        rotateX: -70,
-        filter: "blur(8px)",
-        duration: 0.7,
-        ease: "power3.out",
-        stagger: 0.035,
-      })
-        .to(
-          chars,
-          {
-            textShadow:
-              "0 0 18px rgba(56, 189, 248, 0.55), 0 0 42px rgba(168, 85, 247, 0.35)",
-            duration: 0.5,
-            ease: "power2.inOut",
-            stagger: { each: 0.03, from: "start", yoyo: true, repeat: 1 },
-          },
-          "-=0.25",
-        )
-        .to(
-          chars,
-          { clearProps: "textShadow", duration: 0.6, ease: "power2.out", stagger: 0.02 },
-          "+=0.1",
-        );
-    }, el);
-    return () => ctx.revert();
-  }, []);
   return (
     <section id="top" className="relative flex min-h-screen items-center justify-center px-4 pt-28 sm:px-6">
       <div className="mx-auto max-w-5xl text-center">
@@ -64,36 +22,13 @@ export function Hero() {
           Disponível para novas oportunidades
         </motion.div>
 
-        <motion.h1
-          ref={nameRef}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.1 }}
+        <h1
           aria-label="Iara Venâncio Ribeiro"
-          className="mt-8 font-display text-5xl font-bold leading-[1.05] tracking-tight sm:text-6xl md:text-7xl lg:text-[88px]"
+          className="mt-8 font-display [--stroke-text-height:56px] sm:[--stroke-text-height:72px] md:[--stroke-text-height:88px] lg:[--stroke-text-height:104px]"
         >
-          <span aria-hidden="true" className="inline-block [perspective:600px]">
-            {splitName(NAME_LINE_1).map(({ char, key }) => (
-              <span
-                key={key}
-                data-name-char
-                className="inline-block will-change-transform"
-                style={{ transformOrigin: "50% 100%" }}
-              >
-                {char === " " ? "\u00A0" : char}
-              </span>
-            ))}
-          </span>
-          <br />
-          <span
-            aria-hidden="true"
-            data-name-word
-            className="text-gradient inline-block will-change-transform"
-            style={{ transformOrigin: "50% 100%" }}
-          >
-            {NAME_LINE_2}
-          </span>
-        </motion.h1>
+          <StrokeText text={NAME_LINE_1} />
+          <StrokeText text={NAME_LINE_2} gradient={["#38BDF8", "#A855F7"]} strokeColor="#38BDF8" delay={0.6} />
+        </h1>
 
         <motion.p
           initial={{ opacity: 0, y: 16 }}
