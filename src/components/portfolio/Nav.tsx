@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "motion/react";
 
 const links = [
   { href: "#sobre", label: "Sobre" },
@@ -11,6 +11,8 @@ const links = [
 
 export function Nav() {
   const [scrolled, setScrolled] = useState(false);
+  const [hovered, setHovered] = useState<string | null>(null);
+
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
     window.addEventListener("scroll", onScroll);
@@ -27,36 +29,63 @@ export function Nav() {
       }`}
     >
       <div className="mx-auto flex max-w-6xl items-center justify-between px-4 sm:px-6">
-        <a href="#top" className="flex items-center gap-2 font-display text-sm font-bold tracking-tight">
+        <motion.a
+          href="#top"
+          className="flex items-center gap-2 font-display text-sm font-bold tracking-tight"
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.96 }}
+          transition={{ type: "spring", stiffness: 300, damping: 18 }}
+        >
           <span className="grid h-8 w-8 place-items-center rounded-lg bg-gradient-to-br from-neon-blue to-neon-purple text-background shadow-glow">
             IR
           </span>
           <span className="hidden sm:inline">Iara<span className="text-gradient">.dev</span></span>
-        </a>
+        </motion.a>
 
-        <nav
+        <motion.nav
+          initial={{ y: -10, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.6, delay: 0.15, ease: "easeOut" }}
           className={`hidden items-center gap-1 rounded-full border border-white/10 px-2 py-1.5 text-xs font-medium md:flex ${
             scrolled ? "glass-strong" : "glass"
           }`}
+          onHoverStart={() => {}}
+          onMouseLeave={() => setHovered(null)}
         >
-          {links.map((l) => (
-            <a
+          {links.map((l, i) => (
+            <motion.a
               key={l.href}
               href={l.href}
-              className="rounded-full px-3 py-1.5 text-muted-foreground transition hover:bg-white/5 hover:text-foreground"
+              initial={{ y: -8, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ duration: 0.4, delay: 0.2 + i * 0.06, ease: "easeOut" }}
+              onMouseEnter={() => setHovered(l.href)}
+              className="relative rounded-full px-3 py-1.5 text-muted-foreground transition-colors hover:text-foreground"
             >
-              {l.label}
-            </a>
+              <AnimatePresence>
+                {hovered === l.href && (
+                  <motion.span
+                    layoutId="nav-pill"
+                    className="absolute inset-0 rounded-full bg-white/10 ring-1 ring-white/15"
+                    transition={{ type: "spring", stiffness: 350, damping: 28 }}
+                  />
+                )}
+              </AnimatePresence>
+              <span className="relative z-10">{l.label}</span>
+            </motion.a>
           ))}
-        </nav>
+        </motion.nav>
 
-        <a
+        <motion.a
           href="#contato"
           className="group relative hidden overflow-hidden rounded-full border border-white/10 px-4 py-2 text-xs font-semibold sm:inline-flex"
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.96 }}
+          transition={{ type: "spring", stiffness: 300, damping: 18 }}
         >
           <span className="relative z-10">Fale comigo</span>
           <span className="absolute inset-0 bg-gradient-to-r from-neon-blue to-neon-purple opacity-0 transition group-hover:opacity-100" />
-        </a>
+        </motion.a>
       </div>
     </motion.header>
   );
