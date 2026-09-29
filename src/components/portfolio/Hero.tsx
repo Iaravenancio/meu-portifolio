@@ -65,14 +65,38 @@ export function Hero() {
         </motion.div>
 
         <motion.h1
-          initial={{ opacity: 0, y: 24 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.1 }}
+          ref={nameRef}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.1 }}
+          aria-label="Iara Venâncio Ribeiro"
           className="mt-8 font-display text-5xl font-bold leading-[1.05] tracking-tight sm:text-6xl md:text-7xl lg:text-[88px]"
         >
-          Iara Venâncio
+          <span aria-hidden="true" className="inline-block [perspective:600px]">
+            {splitName(NAME_LINE_1).map(({ char, key }) => (
+              <span
+                key={key}
+                data-name-char
+                className="inline-block will-change-transform"
+                style={{ transformOrigin: "50% 100%" }}
+              >
+                {char === " " ? "\u00A0" : char}
+              </span>
+            ))}
+          </span>
           <br />
-          <span className="text-gradient">Ribeiro</span>
+          <span aria-hidden="true" className="text-gradient inline-block [perspective:600px]">
+            {splitName(NAME_LINE_2).map(({ char, key }) => (
+              <span
+                key={key}
+                data-name-char
+                className="inline-block will-change-transform"
+                style={{ transformOrigin: "50% 100%" }}
+              >
+                {char}
+              </span>
+            ))}
+          </span>
         </motion.h1>
 
         <motion.p
