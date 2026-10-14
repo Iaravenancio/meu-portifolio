@@ -12,19 +12,12 @@ const projects = [
       "Falta de padronização e centralização no cadastro e consulta de pontos de coleta de resíduos recicláveis.",
     result:
       "CRUD completo de pontos de coleta com validação, segurança, documentação Swagger e respostas HTTP RESTful.",
-    tech: [
-      "Java 21",
-      "Spring Boot",
-      "Spring Data JPA",
-      "Spring Security",
-      "Swagger",
-      "Flyway",
-      "Docker",
-    ],
+    tech: ["Java 21", "Spring Boot", "Spring Data JPA", "Spring Security", "Swagger", "Flyway", "Docker"],
     accent: "from-neon-green to-neon-cyan",
     repo: "https://github.com/Iaravenancio/reciclagem-api.git",
     link: "https://github.com/Iaravenancio/reciclagem-api.git",
     ctaLabel: "Ver repositório",
+    code: "API / 01",
   },
   {
     name: "Elegance Moda Feminina",
@@ -35,20 +28,12 @@ const projects = [
       "Necessidade de uma vitrine digital elegante que representasse a marca e facilitasse a navegação e conversão de clientes.",
     result:
       "Loja online responsiva com identidade visual premium, navegação intuitiva e apresentação otimizada de produtos.",
-    tech: [
-      "React",
-      "TypeScript",
-      "Vite",
-      "Tailwind CSS",
-      "TanStack Router",
-      "shadcn/ui",
-      "HTML5",
-      "CSS3",
-    ],
+    tech: ["React", "TypeScript", "Vite", "Tailwind CSS", "TanStack Router", "shadcn/ui", "HTML5", "CSS3"],
     accent: "from-neon-pink to-neon-purple",
     repo: "",
     link: "https://elegance-modafeminina.netlify.app",
     ctaLabel: "Ver projeto",
+    code: "WEB / 02",
   },
   {
     name: "Swift E-commerce · Challenge FIAP",
@@ -59,18 +44,12 @@ const projects = [
       "Criar uma experiência de e-commerce completa e responsiva utilizando apenas tecnologias web fundamentais.",
     result:
       "Site multi-páginas responsivo com navegação por categorias, carrinho persistido em localStorage, cadastro/login simulado e checkout, publicado no GitHub Pages.",
-    tech: [
-      "HTML5",
-      "CSS3",
-      "JavaScript",
-      "localStorage",
-      "Responsividade",
-      "GitHub Pages",
-    ],
+    tech: ["HTML5", "CSS3", "JavaScript", "localStorage", "Responsividade", "GitHub Pages"],
     accent: "from-neon-cyan to-neon-purple",
     repo: "https://github.com/Iaravenancio/Challenge_FIAP",
     link: "https://iaravenancio.github.io/Challenge_FIAP/",
     ctaLabel: "Ver projeto",
+    code: "SHOP / 03",
   },
   {
     name: "InovaGAB · Backend",
@@ -81,20 +60,12 @@ const projects = [
       "Estruturar o fluxo de inovação corporativa com três perfis (Operador, Gestor e Líder), do registro de ideias à aprovação, projetos e indicadores.",
     result:
       "Backend independente com autenticação JWT, controle de acesso por perfil, persistência no MongoDB Atlas, validação de dados e integração com Gemini API para funcionalidades de IA.",
-    tech: [
-      "Java",
-      "Spring Boot",
-      "Spring Security",
-      "JWT",
-      "MongoDB Atlas",
-      "Bean Validation",
-      "Gemini API",
-      "Maven",
-    ],
+    tech: ["Java", "Spring Boot", "Spring Security", "JWT", "MongoDB Atlas", "Bean Validation", "Gemini API", "Maven"],
     accent: "from-neon-purple to-neon-green",
     repo: "https://github.com/Iaravenancio/InovaGAB-Backend",
     link: "https://github.com/Iaravenancio/InovaGAB-Backend",
     ctaLabel: "Ver repositório",
+    code: "CORE / 04",
   },
 ];
 
@@ -108,7 +79,7 @@ export function Projects() {
           description="Uma seleção de projetos desenvolvidos para colocar meus conhecimentos em prática e transformar ideias em aplicações reais."
         />
 
-        <div className={`grid gap-6 ${projects.length === 1 ? "place-items-center" : "md:grid-cols-2"}`}>
+        <div className="grid gap-6 md:grid-cols-2">
           {projects.map((p, i) => (
             <motion.article
               key={p.name}
@@ -116,32 +87,40 @@ export function Projects() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-60px" }}
               transition={{ duration: 0.6, delay: (i % 2) * 0.1 }}
-              className={`group relative flex flex-col overflow-hidden rounded-3xl glass p-6 transition hover:-translate-y-1.5 hover:border-white/20 ${projects.length === 1 ? "w-full max-w-3xl" : ""}`}
+              className="group relative flex flex-col overflow-hidden rounded-3xl glass p-6 transition duration-500 hover:-translate-y-1.5 hover:border-white/20"
             >
-              {/* visual */}
-              <div className="relative mb-6 h-44 overflow-hidden rounded-2xl border border-white/10 bg-[radial-gradient(circle_at_30%_20%,oklch(0.18_0.05_270),oklch(0.08_0.02_270))]">
-                <div className={`absolute inset-0 bg-gradient-to-br ${p.accent} opacity-30 mix-blend-screen transition group-hover:opacity-60`} />
-                <div className="absolute inset-0 grid-bg opacity-30" />
+              <div className={`project-visual relative mb-6 h-44 overflow-hidden rounded-2xl border border-white/10 bg-[radial-gradient(circle_at_50%_45%,oklch(0.17_0.04_270),oklch(0.07_0.02_270))]`}>
+                <div className={`absolute inset-0 bg-gradient-to-br ${p.accent} opacity-20 mix-blend-screen transition duration-500 group-hover:opacity-40`} />
+                <div className="absolute inset-0 grid-bg opacity-25" />
+                <div className="project-visual__ring project-visual__ring--one" />
+                <div className="project-visual__ring project-visual__ring--two" />
+                <div className={`project-visual__core bg-gradient-to-br ${p.accent}`}>
+                  <span className="project-visual__core-dot" />
+                </div>
+                <div className="absolute left-4 top-4 flex items-center gap-2 font-mono text-[9px] uppercase tracking-[0.2em] text-white/55">
+                  <span className="h-1.5 w-1.5 rounded-full bg-neon-cyan shadow-[0_0_10px_#38BDF8]" />
+                  SYSTEM / ONLINE
+                </div>
+                <div className="absolute right-3 top-3 grid h-9 w-9 place-items-center rounded-full border border-white/10 bg-background/50 backdrop-blur-md transition duration-300 group-hover:border-neon-cyan/50 group-hover:text-neon-cyan">
+                  <ArrowUpRight className="h-4 w-4" />
+                </div>
                 <div className="absolute inset-x-4 bottom-3 flex items-center justify-between font-mono text-[10px] uppercase tracking-widest text-white/70">
                   <span>{p.tag}</span>
-                  <span>0{i + 1}</span>
-                </div>
-                <div className="absolute right-3 top-3 grid h-9 w-9 place-items-center rounded-full bg-background/60 backdrop-blur-md transition group-hover:bg-foreground group-hover:text-background">
-                  <ArrowUpRight className="h-4 w-4" />
+                  <span>{p.code}</span>
                 </div>
               </div>
 
-              <h3 className="font-display text-xl font-bold">{p.name}</h3>
-              <p className="mt-2 text-sm text-muted-foreground">{p.description}</p>
+              <h3 className="font-display text-xl font-bold transition group-hover:text-neon-cyan">{p.name}</h3>
+              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{p.description}</p>
 
               <dl className="mt-5 grid grid-cols-1 gap-3 rounded-xl border border-white/5 bg-white/[0.02] p-4 text-xs sm:grid-cols-2">
                 <div>
                   <dt className="font-mono uppercase tracking-widest text-neon-cyan">Problema</dt>
-                  <dd className="mt-1 text-muted-foreground">{p.problem}</dd>
+                  <dd className="mt-1 leading-relaxed text-muted-foreground">{p.problem}</dd>
                 </div>
                 <div>
                   <dt className="font-mono uppercase tracking-widest text-neon-purple">Resultado</dt>
-                  <dd className="mt-1 text-muted-foreground">{p.result}</dd>
+                  <dd className="mt-1 leading-relaxed text-muted-foreground">{p.result}</dd>
                 </div>
               </dl>
 
@@ -149,7 +128,7 @@ export function Projects() {
                 {p.tech.map((t) => (
                   <span
                     key={t}
-                    className="rounded-full border border-white/10 bg-white/[0.03] px-2.5 py-1 text-[11px] font-medium text-muted-foreground"
+                    className="rounded-full border border-white/10 bg-white/[0.03] px-2.5 py-1 text-[11px] font-medium text-muted-foreground transition hover:border-neon-cyan/30 hover:text-foreground"
                   >
                     {t}
                   </span>
@@ -170,7 +149,7 @@ export function Projects() {
                     href={p.repo}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1.5 rounded-full border border-white/10 px-3 py-1.5 font-medium text-muted-foreground transition hover:text-foreground"
+                    className="inline-flex items-center gap-1.5 rounded-full border border-white/10 px-3 py-1.5 font-medium text-muted-foreground transition hover:border-neon-purple/50 hover:text-foreground"
                   >
                     <Github className="h-3 w-3" /> Código
                   </a>
@@ -179,7 +158,7 @@ export function Projects() {
                     href={p.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1.5 rounded-full border border-white/10 px-3 py-1.5 font-medium text-muted-foreground transition hover:text-foreground"
+                    className="inline-flex items-center gap-1.5 rounded-full border border-white/10 px-3 py-1.5 font-medium text-muted-foreground transition hover:border-neon-purple/50 hover:text-foreground"
                   >
                     <Globe className="h-3 w-3" /> Demo
                   </a>
