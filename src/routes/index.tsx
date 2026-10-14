@@ -13,17 +13,17 @@ import { Footer } from "@/components/portfolio/Footer";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Iara Venâncio Ribeiro · Analista e Desenvolvedora de Sistemas" },
+      { title: "Iara Venâncio Ribeiro | Estudante de Análise e Desenvolvimento de Sistemas" },
       {
         name: "description",
         content:
-          "Portfólio de Iara Venâncio Ribeiro — Analista e Desenvolvedora de Sistemas. Engenharia de software, full stack, cloud computing e IA aplicada.",
+          "Portfólio de Iara Venâncio Ribeiro, estudante de Análise e Desenvolvimento de Sistemas, com projetos em Java, APIs, bancos de dados, desenvolvimento web e automação.",
       },
       { property: "og:title", content: "Iara Venâncio Ribeiro · Portfólio" },
       {
         property: "og:description",
         content:
-          "Engenharia de software, full stack, cloud e IA. Transformando ideias em soluções digitais inovadoras.",
+          "Projetos acadêmicos e pessoais em desenvolvimento de software, bancos de dados e automação.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
