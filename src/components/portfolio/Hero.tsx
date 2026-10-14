@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ArrowDown, Download, Github, Linkedin, Sparkles } from "lucide-react";
+import { ArrowDown, Mail, Github, Linkedin, Sparkles } from "lucide-react";
 import { StrokeText } from "./StrokeText";
 import { TechFlower } from "./TechFlower";
 
@@ -77,8 +77,8 @@ export function Hero() {
               href="#contato"
               className="inline-flex items-center gap-2 rounded-full border border-white/15 glass px-6 py-3 text-sm font-semibold transition duration-300 hover:-translate-y-0.5 hover:border-neon-cyan/50 hover:text-neon-cyan"
             >
-              <Download className="h-4 w-4" />
-              Currículo
+              <Mail className="h-4 w-4" />
+              Entrar em contato
             </a>
             <a
               href="https://www.linkedin.com/in/iara-venancio/"
