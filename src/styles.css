@@ -333,3 +333,79 @@
     animation: none !important;
   }
 }
+
+
+/* Mini visualizações abstratas das aplicações nos cards de projeto */
+.project-visual__ring {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 8.5rem;
+  aspect-ratio: 1;
+  border: 1px solid rgb(186 230 253 / 30%);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: border-color 500ms ease, scale 700ms ease;
+}
+
+.project-visual__ring--one {
+  box-shadow: 0 0 34px rgb(56 189 248 / 7%), inset 0 0 28px rgb(56 189 248 / 5%);
+  animation: project-orbit 18s linear infinite;
+}
+
+.project-visual__ring--two {
+  width: 6rem;
+  border-color: rgb(168 85 247 / 35%);
+  border-style: dashed;
+  animation: project-orbit 13s linear infinite reverse;
+}
+
+.project-visual__core {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  display: grid;
+  width: 2.4rem;
+  aspect-ratio: 1;
+  place-items: center;
+  border-radius: 35%;
+  opacity: .9;
+  box-shadow: 0 0 28px rgb(56 189 248 / 22%);
+  transform: translate(-50%, -50%) rotate(45deg);
+  transition: transform 700ms cubic-bezier(.2, .8, .2, 1), box-shadow 500ms ease;
+}
+
+.project-visual__core-dot {
+  width: .45rem;
+  aspect-ratio: 1;
+  border: 1px solid rgb(255 255 255 / 85%);
+  border-radius: 50%;
+  background: rgb(255 255 255 / 75%);
+  box-shadow: 0 0 12px rgb(224 247 255 / 85%);
+}
+
+.group:hover .project-visual__ring--one {
+  border-color: rgb(186 230 253 / 65%);
+  scale: 1.13;
+}
+
+.group:hover .project-visual__ring--two {
+  scale: .88;
+}
+
+.group:hover .project-visual__core {
+  box-shadow: 0 0 38px rgb(56 189 248 / 38%);
+  transform: translate(-50%, -50%) rotate(135deg) scale(1.14);
+}
+
+@keyframes project-orbit {
+  from { rotate: 0deg; }
+  to { rotate: 360deg; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .project-visual__ring--one,
+  .project-visual__ring--two {
+    animation: none !important;
+  }
+}
