@@ -32,7 +32,7 @@ export function Stack() {
   return (
     <section id="stack" className="relative px-4 py-32 sm:px-6">
       <div className="mx-auto max-w-6xl">
-        <SectionHeading eyebrow="stack tecnológica" title="Tecnologias para construir e automatizar" description="Tecnologias que uso em estudos, projetos e automações." />
+        <SectionHeading eyebrow="stack tecnológica" title="Tecnologias que uso em estudos, projetos e automações." />
         <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {stack.map((group, i) => <motion.div key={group.title} initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-50px" }} transition={{ duration: .5, delay: i * .1 }}
             data-spot className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-white/10 bg-white/[0.025] p-6 transition hover:-translate-y-1">
