@@ -1,0 +1,70 @@
+/* Visual refinements ported from novo-visual.html */
+:root {
+  --font-display: "Chakra Petch", system-ui, sans-serif;
+  --font-sans: "IBM Plex Sans", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+  --font-tech-heading: "Chakra Petch", system-ui, sans-serif;
+  --font-tech-body: "IBM Plex Sans", system-ui, sans-serif;
+  --font-tech-mono: "JetBrains Mono", ui-monospace, monospace;
+  --tech-cyan: #35e0ff;
+  --tech-amber: #ffb454;
+}
+body { font-family: var(--font-tech-body); }
+h1, h2, h3, h4, h5, h6, .font-display { font-family: var(--font-tech-heading) !important; }
+.font-mono, code, pre, .tech-label { font-family: var(--font-tech-mono) !important; }
+section[id] { scroll-margin-top: 6rem; }
+.tech-section-progress {
+  position: fixed; left: 1.25rem; top: 50%; z-index: 45;
+  display: flex; flex-direction: column; gap: 1.35rem;
+  transform: translateY(-50%); pointer-events: none;
+}
+.tech-section-progress::before, .tech-section-progress__fill {
+  position: absolute; left: 3px; top: 2px; width: 1px; content: "";
+}
+.tech-section-progress::before { bottom: 2px; background: rgba(53,224,255,.2); }
+.tech-section-progress__fill {
+  height: var(--progress, 0%); background: linear-gradient(#35e0ff,#ffb454);
+  box-shadow: 0 0 9px rgba(53,224,255,.65);
+}
+.tech-section-progress a {
+  position: relative; display: flex; align-items: center; gap: .7rem;
+  color: #7f8f93; font: 600 .61rem var(--font-tech-mono);
+  letter-spacing: .13em; text-transform: uppercase; text-decoration: none;
+  pointer-events: auto;
+}
+.tech-section-progress a i {
+  width: 7px; height: 7px; flex: 0 0 7px; border: 1px solid #35e0ff;
+  background: #04070b; transform: rotate(45deg); transition: .25s;
+}
+.tech-section-progress a span {
+  opacity: 0; transform: translateX(-5px); transition: opacity .2s, transform .2s;
+}
+.tech-section-progress a:hover span, .tech-section-progress a.is-active span { opacity: 1; transform: none; }
+.tech-section-progress a.is-active { color: #ffb454; }
+.tech-section-progress a.is-active i { background: #ffb454; border-color: #ffb454; box-shadow: 0 0 10px #ffb454; }
+.tech-flower-cursor {
+  position: fixed; left: 0; top: 0; z-index: 100; width: 34px; height: 34px;
+  margin: -17px 0 0 -17px; pointer-events: none; opacity: 0;
+  mix-blend-mode: screen; will-change: transform; transition: opacity .18s;
+}
+.tech-flower-cursor.is-ready { opacity: 1; }
+.tech-flower-cursor__svg {
+  display: block; width: 100%; height: 100%; overflow: visible;
+  filter: drop-shadow(0 0 4px rgba(34,211,238,.8));
+  animation: tech-cursor-spin 9s linear infinite;
+  transition: transform .35s cubic-bezier(.3,1.5,.5,1);
+}
+.tech-flower-cursor__outer ellipse { fill: rgba(34,211,238,.1); stroke: #22d3ee; stroke-width: .7; }
+.tech-flower-cursor__inner ellipse { fill: rgba(168,85,247,.15); stroke: #a855f7; stroke-width: .6; }
+.tech-flower-cursor__svg circle { fill: #fff; }
+.tech-flower-cursor.is-hovering .tech-flower-cursor__svg { transform: scale(1.65); animation-duration: 3s; }
+@keyframes tech-cursor-spin { to { rotate: 360deg; } }
+@media (min-width: 1181px) {
+  @media (pointer: fine) { body, body a, body button { cursor: none; } }
+}
+@media (max-width: 1180px) { .tech-section-progress { display: none; } }
+@media (pointer: coarse) { .tech-flower-cursor { display: none; } }
+@media (prefers-reduced-motion: reduce) {
+  .tech-flower-cursor__svg { animation: none; }
+  .tech-section-progress a span { transition: none; }
+}
