@@ -16,7 +16,8 @@ export function Hero() {
         </motion.div>
         <motion.h1 aria-label="Iara Venâncio Ribeiro" initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: .7, delay: .15 }}
           className="hero-name w-full font-display">
-          <span className="ln">Iara Venâncio</span><span className="ln">Ribeiro</span>
+          <span className="ln block whitespace-nowrap">Iara Venâncio</span>
+          <span className="ln block whitespace-nowrap">Ribeiro</span>
         </motion.h1>
         <motion.p initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: .7, delay: .25 }}
           className="max-w-2xl text-base leading-relaxed text-muted-foreground sm:text-lg">
