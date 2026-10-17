@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { useEffect } from "react";
 import { SectionHeading } from "./SectionHeading";
 
 const items = [
@@ -7,11 +8,28 @@ const items = [
   { period: "Fev 2025 — Atual", role: "Desenvolvimento e Especialização", company: "Projetos próprios e acadêmicos", current: true, tools: ["Java", "Banco de Dados", "APIs REST", "Automação"], bullets: ["Aprofundo conhecimentos em Java, bancos de dados, APIs e automações.", "Desenvolvo projetos para aplicar o que aprendo e construir soluções úteis.", "Busco oportunidades para continuar evoluindo na área de tecnologia."] },
 ];
 
-function Leaf({ open }: { open: boolean }) {
-  return <svg viewBox="0 0 64 40" fill="none" aria-hidden="true" className={`experience-leaf-svg ${open ? "is-open" : ""}`}><path className="leaf-shape" d="M3 35C8 12 29 2 59 4C54 28 32 39 3 35Z" /><path d="M4 35C21 25 37 15 57 5" stroke="currentColor" strokeWidth="1.2" /><path d="M20 26L17 16M31 20L30 10M39 15L47 14" stroke="currentColor" strokeWidth=".8" opacity=".7" /></svg>;
+function Leaf() {
+  return <motion.svg viewBox="0 0 64 40" fill="none" aria-hidden="true" className="experience-leaf-svg" initial={{ scale: .3, rotate: -35 }} whileInView={{ scale: 1, rotate: 0 }} viewport={{ once: true, amount: .5 }} transition={{ duration: 1, ease: [.3, 1.5, .5, 1] }}><motion.path className="leaf-shape" d="M3 35C8 12 29 2 59 4C54 28 32 39 3 35Z" initial={{ fill: "rgba(34,211,238,0)" }} whileInView={{ fill: "rgba(34,211,238,.16)" }} viewport={{ once: true, amount: .5 }} transition={{ duration: 1 }} /><path d="M4 35C21 25 37 15 57 5" stroke="currentColor" strokeWidth="1.2" /><path d="M20 26L17 16M31 20L30 10M39 15L47 14" stroke="currentColor" strokeWidth=".8" opacity=".7" /></motion.svg>;
 }
 
 export function Experience() {
+  useEffect(() => {
+    const section = document.getElementById("experiencia");
+    const fill = section?.querySelector<HTMLElement>(".experience-track__fill");
+    if (!section || !fill) return;
+    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const update = () => {
+      if (reducedMotion) { fill.style.height = "100%"; return; }
+      const rect = section.getBoundingClientRect();
+      const total = rect.height + window.innerHeight;
+      const progressed = Math.min(1, Math.max(0, (window.innerHeight - rect.top) / total));
+      fill.style.height = `${progressed * 100}%`;
+    };
+    update();
+    window.addEventListener("scroll", update, { passive: true });
+    window.addEventListener("resize", update);
+    return () => { window.removeEventListener("scroll", update); window.removeEventListener("resize", update); };
+  }, []);
   return (
     <section id="experiencia" className="relative px-4 py-32 sm:px-6">
       <div className="mx-auto max-w-6xl">
@@ -25,7 +43,7 @@ export function Experience() {
               <h3 className="mt-2 font-display text-xl font-semibold text-white">{it.role}</h3>
               <p className="mt-1 text-sm text-muted-foreground">{it.company}</p>
             </div>
-            <div aria-hidden="true" className={`experience-node ${i % 2 === 0 ? "md:col-start-2 md:row-start-1" : "md:col-start-2 md:row-start-1"}`}><Leaf open={true} />{it.current && <span className="experience-node__pulse" />}</div>
+            <div aria-hidden="true" className={`experience-node ${i % 2 === 0 ? "md:col-start-2 md:row-start-1" : "md:col-start-2 md:row-start-1"}`}><Leaf />{it.current && <span className="experience-node__pulse" />}</div>
             <div className={`experience-card group relative overflow-hidden rounded-2xl p-5 ${i % 2 === 0 ? "md:col-start-1 md:row-start-1" : "md:col-start-3 md:row-start-1"}`} data-spot>
               <div className="experience-card__topline" />
               <ul className="space-y-3 text-sm leading-relaxed text-muted-foreground">{it.bullets.map((b, j) => <li key={j} className="flex gap-2"><span className="mt-[.55rem] h-1 w-1 shrink-0 rounded-full bg-neon-purple" /><span>{b}</span></li>)}</ul>
