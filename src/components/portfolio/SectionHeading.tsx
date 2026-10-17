@@ -20,8 +20,8 @@ export function SectionHeading({
       transition={{ duration: 0.6 }}
       className={`mb-12 ${align === "center" ? "mx-auto max-w-2xl text-center" : "max-w-2xl"}`}
     >
-      <span className="font-mono text-xs uppercase tracking-[0.3em] text-neon-cyan">
-        / {eyebrow}
+      <span className="section-label font-mono text-xs uppercase tracking-[0.3em] text-neon-cyan">
+        {eyebrow}
       </span>
       {title && (
         <h2 className="mt-3 font-display text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
