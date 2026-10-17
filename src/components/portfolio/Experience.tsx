@@ -1,4 +1,3 @@
-import { motion } from "framer-motion";
 import { useEffect } from "react";
 import { SectionHeading } from "./SectionHeading";
 
@@ -9,47 +8,56 @@ const items = [
 ];
 
 function Leaf() {
-  return <motion.svg viewBox="0 0 64 40" fill="none" aria-hidden="true" className="experience-leaf-svg" initial={{ scale: .3, rotate: -35 }} whileInView={{ scale: 1, rotate: 0 }} viewport={{ once: true, amount: .5 }} transition={{ duration: 1, ease: [.3, 1.5, .5, 1] }}><motion.path className="leaf-shape" d="M3 35C8 12 29 2 59 4C54 28 32 39 3 35Z" initial={{ fill: "rgba(34,211,238,0)" }} whileInView={{ fill: "rgba(34,211,238,.16)" }} viewport={{ once: true, amount: .5 }} transition={{ duration: 1 }} /><path d="M4 35C21 25 37 15 57 5" stroke="currentColor" strokeWidth="1.2" /><path d="M20 26L17 16M31 20L30 10M39 15L47 14" stroke="currentColor" strokeWidth=".8" opacity=".7" /></motion.svg>;
+  return <svg aria-hidden="true" viewBox="0 0 64 40" className="tl-leaf"><defs><linearGradient id="tl-leaf-fill" x1="0" y1="1" x2="1" y2="0"><stop offset="0%" stopColor="#22d3ee" stopOpacity=".2"/><stop offset="100%" stopColor="#a855f7" stopOpacity=".2"/></linearGradient></defs><path className="tl-leaf__outline" d="M2 36C7 13 29 2 61 3C55 28 32 40 2 36Z"/><path className="tl-leaf__vein" d="M3 36C22 26 41 14 60 4"/></svg>;
 }
 
 export function Experience() {
   useEffect(() => {
-    const section = document.getElementById("experiencia");
-    const fill = section?.querySelector<HTMLElement>(".experience-track__fill");
-    if (!section || !fill) return;
+    const tl = document.getElementById("timeline");
+    if (!tl) return;
+    const items = [...tl.querySelectorAll<HTMLElement>(".tl-item")];
+    const clamp = (v: number, a: number, b: number) => Math.max(a, Math.min(b, v));
     const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    const update = () => {
-      if (reducedMotion) { fill.style.height = "100%"; return; }
-      const rect = section.getBoundingClientRect();
-      const total = rect.height + window.innerHeight;
-      const progressed = Math.min(1, Math.max(0, (window.innerHeight - rect.top) / total));
-      fill.style.height = `${progressed * 100}%`;
-    };
+    function update() {
+      if (reducedMotion) {
+        tl.style.setProperty("--fill", tl.scrollHeight + "px");
+        items.forEach((item) => item.classList.add("is-active"));
+        return;
+      }
+      const rect = tl.getBoundingClientRect();
+      const trigger = window.innerHeight * 0.6;
+      const fillPx = clamp(trigger - rect.top, 0, rect.height);
+      tl.style.setProperty("--fill", fillPx + "px");
+      items.forEach((item) => {
+        const leafY = item.offsetTop + 28;
+        item.classList.toggle("is-active", fillPx >= leafY);
+      });
+    }
     update();
     window.addEventListener("scroll", update, { passive: true });
     window.addEventListener("resize", update);
     return () => { window.removeEventListener("scroll", update); window.removeEventListener("resize", update); };
   }, []);
+
   return (
     <section id="experiencia" className="relative px-4 py-32 sm:px-6">
       <div className="mx-auto max-w-6xl">
         <SectionHeading eyebrow="experiência" title="Trajetória profissional" />
-        <div className="experience-timeline relative">
-          <div aria-hidden="true" className="experience-track"><span className="experience-track__fill" /></div>
-          {items.map((it, i) => <motion.article key={it.role} initial={{ opacity: 0, y: 22 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: .2 }} transition={{ duration: .55, delay: .05 }}
-            className={`experience-item relative grid items-start gap-5 ${i % 2 === 0 ? "md:grid-cols-[1fr_64px_1fr]" : "md:grid-cols-[1fr_64px_1fr]"}`}>
-            <div className={`experience-meta ${i % 2 === 0 ? "md:col-start-3 md:row-start-1" : "md:col-start-1 md:row-start-1 md:text-right"}`}>
-              <div className="font-mono text-[11px] uppercase tracking-[.2em] text-neon-cyan">{it.period}</div>
-              <h3 className="mt-2 font-display text-xl font-semibold text-white">{it.role}</h3>
-              <p className="mt-1 text-sm text-muted-foreground">{it.company}</p>
-            </div>
-            <div aria-hidden="true" className={`experience-node ${i % 2 === 0 ? "md:col-start-2 md:row-start-1" : "md:col-start-2 md:row-start-1"}`}><Leaf />{it.current && <span className="experience-node__pulse" />}</div>
-            <div className={`experience-card group relative overflow-hidden rounded-2xl p-5 ${i % 2 === 0 ? "md:col-start-1 md:row-start-1" : "md:col-start-3 md:row-start-1"}`} data-spot>
-              <div className="experience-card__topline" />
-              <ul className="space-y-3 text-sm leading-relaxed text-muted-foreground">{it.bullets.map((b, j) => <li key={j} className="flex gap-2"><span className="mt-[.55rem] h-1 w-1 shrink-0 rounded-full bg-neon-purple" /><span>{b}</span></li>)}</ul>
-              <div className="mt-4 flex flex-wrap gap-1.5">{it.tools.map(tool => <span key={tool} className="rounded-full border border-white/10 px-2.5 py-1 font-mono text-[10px] text-white/65">{tool}</span>)}</div>
-            </div>
-          </motion.article>)}
+        <div id="timeline" className="tl-timeline">
+          <div aria-hidden="true" className="tl-track"><span className="tl-fill" /><span className="tl-seiva" /></div>
+          {items.map((item, index) => (
+            <article key={item.role} className={`tl-item ${index % 2 ? "tl-item--left" : "tl-item--right"}`}>
+              <div className="tl-node" aria-hidden="true"><Leaf />{item.current && <span className="tl-current-dot" />}</div>
+              <div className="tl-card" data-spot>
+                <div className="tl-card__topline" />
+                <div className="tl-date">{item.period}</div>
+                <h3 className="tl-role">{item.role}</h3>
+                <p className="tl-company">{item.company}</p>
+                <ul className="tl-bullets">{item.bullets.map((bullet) => <li key={bullet}>{bullet}</li>)}</ul>
+                <div className="tl-tools">{item.tools.map((tool) => <span key={tool}>{tool}</span>)}</div>
+              </div>
+            </article>
+          ))}
         </div>
       </div>
     </section>
