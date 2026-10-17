@@ -92,15 +92,11 @@ export function Projects() {
               <div className={`project-visual relative mb-6 h-44 overflow-hidden rounded-2xl border border-white/10 bg-[radial-gradient(circle_at_50%_45%,oklch(0.17_0.04_270),oklch(0.07_0.02_270))]`}>
                 <div className={`absolute inset-0 bg-gradient-to-br ${p.accent} opacity-20 mix-blend-screen transition duration-500 group-hover:opacity-40`} />
                 <div className="absolute inset-0 grid-bg opacity-25" />
-                <div className="project-visual__ring project-visual__ring--one" />
-                <div className="project-visual__ring project-visual__ring--two" />
-                <div className={`project-visual__core bg-gradient-to-br ${p.accent}`}>
-                  <span className="project-visual__core-dot" />
-                </div>
-                <div className="absolute left-4 top-4 flex items-center gap-2 font-mono text-[9px] uppercase tracking-[0.2em] text-white/55">
-                  <span className="h-1.5 w-1.5 rounded-full bg-neon-cyan shadow-[0_0_10px_#38BDF8]" />
-                  SYSTEM / ONLINE
-                </div>
+                <div className="project-flower" aria-hidden="true"><svg viewBox="-50 -50 100 100">
+                  {p.tech.map((tech, petalIndex) => <ellipse key={tech} className="project-flower__petal" cx="0" cy="-15" rx="7" ry="14" style={{ transform: "rotate(" + (petalIndex * 360 / p.tech.length) + "deg)", transitionDelay: (petalIndex * 45) + "ms" }} />)}
+                  <circle className="project-flower__core" r="3.2" />
+                </svg></div>
+                <div className="project-seed absolute left-4 top-4 font-mono text-[9px] uppercase tracking-[0.2em] text-white/65"><span className="project-seed__seed">SEED</span><span className="project-seed__bloom">BLOOM</span> · {p.tech.length} techs</div>
                 <div className="absolute right-3 top-3 grid h-9 w-9 place-items-center rounded-full border border-white/10 bg-background/50 backdrop-blur-md transition duration-300 group-hover:border-neon-cyan/50 group-hover:text-neon-cyan">
                   <ArrowUpRight className="h-4 w-4" />
                 </div>
