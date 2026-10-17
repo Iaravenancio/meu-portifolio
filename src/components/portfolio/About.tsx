@@ -10,13 +10,13 @@ export function About() {
           title={<>Construindo o <span className="text-gradient">futuro digital</span> com código.</>}
         />
 
-        <div className="mx-auto max-w-3xl">
+        <div className="about-copy-wrap max-w-[640px]">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="space-y-5 text-lg leading-relaxed text-muted-foreground"
+            className="about-copy space-y-5 text-lg leading-relaxed text-muted-foreground"
           >
             <p>
               Sou <span className="text-foreground font-medium">estudante de Análise e Desenvolvimento de Sistemas</span>,
