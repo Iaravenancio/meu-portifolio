@@ -444,3 +444,132 @@
 @media (prefers-reduced-motion: reduce) {
   .hero-orbit, .tech-flower::before { animation: none !important; }
 }
+
+
+/* ===== Visual iara.dev: tipografia, atmosfera e microinterações ===== */
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=JetBrains+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap');
+
+:root {
+  --font-tech-heading: "Chakra Petch", system-ui, sans-serif;
+  --font-tech-body: "IBM Plex Sans", system-ui, sans-serif;
+  --font-tech-mono: "JetBrains Mono", ui-monospace, monospace;
+  --tech-cyan: #35e0ff;
+  --tech-amber: #ffb454;
+  --tech-line: rgba(53, 224, 255, .13);
+}
+
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--font-tech-body);
+  background-color: #04070b;
+}
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: .42;
+  background:
+    linear-gradient(var(--tech-line) 1px, transparent 1px) 0 0 / 64px 64px,
+    linear-gradient(90deg, var(--tech-line) 1px, transparent 1px) 0 0 / 64px 64px;
+  mask-image: radial-gradient(ellipse at 50% 25%, #000, transparent 78%);
+}
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 30;
+  pointer-events: none;
+  opacity: .035;
+  background: repeating-linear-gradient(0deg, #000 0 1px, transparent 1px 3px);
+}
+h1, h2, h3, .font-display {
+  font-family: var(--font-tech-heading) !important;
+  letter-spacing: -.015em;
+}
+.font-mono, code, pre, .tech-label {
+  font-family: var(--font-tech-mono) !important;
+}
+p, li, input, textarea, button, a {
+  font-family: var(--font-tech-body);
+}
+section[id] { scroll-margin-top: 5rem; }
+.hero-shell { isolation: isolate; }
+.hero-shell::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: radial-gradient(ellipse 48% 45% at 50% 48%, rgba(4,7,11,.48), transparent 100%);
+}
+.hero-content { text-wrap: pretty; }
+.hero-content h1 { line-height: 1.02; }
+.hero-content .font-mono { letter-spacing: .2em; }
+.glass {
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+.card, [data-spot], article[class*="rounded"] {
+  position: relative;
+  isolation: isolate;
+  transition: border-color .3s ease, transform .3s ease, box-shadow .3s ease;
+}
+.card::after, [data-spot]::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0;
+  background: radial-gradient(360px circle at var(--spot-x, 50%) var(--spot-y, 50%), rgba(53,224,255,.10), transparent 65%);
+  transition: opacity .25s ease;
+}
+.card:hover::after, [data-spot]:hover::after { opacity: 1; }
+.card:hover, [data-spot]:hover {
+  border-color: rgba(53,224,255,.32);
+  box-shadow: 0 14px 42px rgba(0,0,0,.22), 0 0 24px rgba(53,224,255,.055);
+}
+.tech-reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  filter: blur(5px);
+  transition: opacity .75s ease, transform .75s ease, filter .75s ease;
+}
+.tech-reveal.is-visible {
+  opacity: 1;
+  transform: none;
+  filter: none;
+}
+.tech-scramble { display: inline; }
+.tech-section-label {
+  display: flex;
+  align-items: center;
+  gap: .85rem;
+  color: #7f8f93;
+  font: 600 .68rem var(--font-tech-mono);
+  letter-spacing: .22em;
+  text-transform: uppercase;
+}
+.tech-section-label::after {
+  content: "";
+  height: 1px;
+  flex: 1;
+  background: linear-gradient(90deg, rgba(53,224,255,.42), transparent);
+}
+a, button { transition-timing-function: cubic-bezier(.2,.75,.25,1); }
+a:focus-visible, button:focus-visible {
+  outline: 2px solid var(--tech-cyan);
+  outline-offset: 4px;
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .tech-reveal { opacity: 1; transform: none; filter: none; }
+}
