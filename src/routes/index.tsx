@@ -9,6 +9,7 @@ import { Experience } from "@/components/portfolio/Experience";
 import { Certifications } from "@/components/portfolio/Certifications";
 import { Contact } from "@/components/portfolio/Contact";
 import { Footer } from "@/components/portfolio/Footer";
+import { PortfolioEffects } from "@/components/portfolio/PortfolioEffects";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -36,6 +37,7 @@ function Index() {
   return (
     <main className="dark relative min-h-screen bg-background text-foreground">
       <NeuralBackground />
+      <PortfolioEffects />
       <Nav />
       <Hero />
       <About />
