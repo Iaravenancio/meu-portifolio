@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import "@/styles/portfolio-visual.css";
 
 const sections = [
@@ -30,7 +30,10 @@ const flower = `<svg class="tech-flower-cursor__svg" viewBox="-20 -20 40 40" ari
 </svg>`;
 
 export function PortfolioChrome() {
+  const [bootVisible, setBootVisible] = useState(true);
+
   useEffect(() => {
+    const bootTimer = window.setTimeout(() => setBootVisible(false), 1450);
     const finePointer = window.matchMedia("(pointer: fine)").matches;
     const cursor = document.createElement("div");
     cursor.className = "tech-flower-cursor";
@@ -84,6 +87,7 @@ export function PortfolioChrome() {
     updateProgress();
 
     return () => {
+      window.clearTimeout(bootTimer);
       window.removeEventListener("pointermove", onPointerMove);
       window.removeEventListener("scroll", updateProgress);
       window.removeEventListener("resize", updateProgress);
@@ -93,5 +97,15 @@ export function PortfolioChrome() {
     };
   }, []);
 
-  return null;
+  return bootVisible ? (
+    <div className="tech-boot" aria-hidden="true">
+      <div>
+        <div>&gt; iniciando <strong>iara.dev</strong></div>
+        <div>&gt; carregando flora.canvas ... <strong>ok</strong></div>
+        <div>&gt; conectando projetos ... <strong>ok</strong></div>
+        <div>&gt; pronto.</div>
+        <span className="tech-boot__cursor">▍</span>
+      </div>
+    </div>
+  ) : null;
 }
