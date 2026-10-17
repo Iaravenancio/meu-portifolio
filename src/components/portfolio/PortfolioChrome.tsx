@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import "@/styles/portfolio-visual.css";
 
 const sections = [
+  { id: "top", label: "Início" },
   { id: "sobre", label: "Sobre" },
   { id: "stack", label: "Stack" },
   { id: "projetos", label: "Projetos" },
