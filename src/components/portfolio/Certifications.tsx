@@ -28,9 +28,11 @@ export function Certifications() {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.45, delay: i * 0.06 }}
-              className="group relative overflow-hidden rounded-2xl glass p-5"
+              data-spot
+              className="cert-card group relative overflow-hidden rounded-2xl border border-white/10 bg-white/[0.025] p-5 transition duration-300 hover:-translate-y-1"
             >
-              <div className="absolute inset-0 bg-gradient-to-br from-neon-blue/0 via-neon-purple/0 to-neon-cyan/0 opacity-0 transition group-hover:from-neon-blue/10 group-hover:via-neon-purple/10 group-hover:to-neon-cyan/10 group-hover:opacity-100" />
+              <div className="cert-card__spot pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+              <div className="cert-card__topline absolute inset-x-[14%] top-0 h-px" />
               <div className="relative">
                 <div className="flex items-start justify-between">
                   <div className="grid h-10 w-10 place-items-center rounded-lg bg-gradient-to-br from-neon-blue/20 to-neon-purple/20 text-neon-cyan ring-1 ring-white/10">
