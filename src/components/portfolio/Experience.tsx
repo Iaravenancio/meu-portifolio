@@ -38,7 +38,7 @@ export function Experience() {
         />
 
         <div className="relative">
-          <div className="absolute left-4 top-2 bottom-2 w-px bg-gradient-to-b from-neon-blue via-neon-purple to-transparent md:left-1/2" />
+          <motion.div aria-hidden="true" initial={{ scaleY: 0 }} whileInView={{ scaleY: 1 }} viewport={{ once: true, amount: 0.1 }} transition={{ duration: 1.8, ease: "easeOut" }} className="experience-branch absolute left-4 top-2 bottom-2 w-px origin-top md:left-1/2" />
 
           {items.map((it, i) => (
             <motion.div
@@ -51,7 +51,7 @@ export function Experience() {
                 i % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
               }`}
             >
-              <div className="absolute left-2.5 top-2 grid h-3 w-3 place-items-center rounded-full bg-neon-purple shadow-[0_0_20px_var(--neon-purple)] md:left-1/2 md:-translate-x-1/2" />
+              <motion.div aria-hidden="true" initial={{ opacity: 0, scale: 0.45, rotate: -24 }} whileInView={{ opacity: 1, scale: 1, rotate: 0 }} viewport={{ once: true, amount: 0.55 }} transition={{ duration: 0.65, delay: 0.12 }} className="experience-leaf absolute left-[5px] top-1 md:left-[calc(50%-9px)]"><svg viewBox="0 0 24 24" fill="none"><path d="M3 20C4 10 10 4 21 3C20 14 13 20 3 20Z" /><path d="M4 20C9 15 13 11 19 5" /></svg></motion.div>
 
               <div className="md:w-1/2 md:px-8">
                 <div className="font-mono text-xs uppercase tracking-[0.3em] text-neon-cyan">
@@ -62,7 +62,7 @@ export function Experience() {
               </div>
 
               <div className="md:w-1/2 md:px-8">
-                <div className="glass rounded-2xl p-5">
+                <div className="experience-card glass rounded-2xl p-5">
                   <ul className="space-y-2 text-sm text-muted-foreground">
                     {it.bullets.map((b, idx) => {
                       const text = typeof b === "string" ? b : (b as any).text;
