@@ -9,7 +9,7 @@ export function Contact() {
     { icon: Mail, label: "E-mail", value: "iara.ven4nci0@gmail.com", href: "mailto:iara.ven4nci0@gmail.com" },
   ];
   return <section id="contato" className="relative px-4 py-32 sm:px-6"><div className="mx-auto max-w-2xl">
-    <SectionHeading eyebrow="contato" align="center" title="Tem uma ideia? Vamos fazer ela florescer." />
+    <SectionHeading eyebrow="contato" align="center" />
     <div className="contact-cards space-y-3">{contacts.map((c, i) => <motion.a key={c.label} href={c.href} target="_blank" rel="noopener noreferrer" initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: .4, delay: i * .08 }} data-spot className="contact-card group relative flex items-center gap-4 overflow-hidden rounded-2xl border border-white/10 p-4 transition hover:-translate-y-0.5 hover:border-white/20">
       <div className="grid h-10 w-10 place-items-center rounded-lg border border-white/10 bg-white/[0.03] text-neon-cyan"><c.icon className="h-4 w-4" /></div><div className="min-w-0 flex-1"><div className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground">{c.label}</div><div className="truncate text-sm font-medium text-white">{c.value}</div></div><ArrowHint />
     </motion.a>)}
