@@ -252,3 +252,25 @@ section h2 .text-gradient, section h2 [class*="text-gradient"] {
 .tech-section-progress a.is-active i{width:7px;height:7px;background:#22d3ee;border-color:#22d3ee;box-shadow:0 0 7px rgba(34,211,238,.8)}
 .tech-section-progress a span{left:18px;font-size:.58rem;padding:5px 7px}
 @media(prefers-reduced-motion:reduce){.hero-name>span{-webkit-text-fill-color:#f5f8fa!important}}
+
+/* Correções solicitadas: folha conectada ao caule e indicador azul com tooltip */
+.tech-section-progress a.is-active{color:#22d3ee!important}
+.tech-section-progress a.is-active span{opacity:0!important;visibility:hidden!important;transform:translate(0,-50%)!important}
+.tech-section-progress a:hover span,.tech-section-progress a:focus-visible span{opacity:1!important;visibility:visible!important;transform:translate(0,-50%)!important}
+.tech-section-progress a.is-active i{background:#22d3ee!important;border-color:#22d3ee!important;box-shadow:0 0 8px rgba(34,211,238,.9)!important}
+.tech-section-progress__fill{background:linear-gradient(#22d3ee,#3b9cff)!important;box-shadow:0 0 5px rgba(34,211,238,.55)!important}
+.tech-section-progress::before{background:rgba(34,211,238,.24)!important}
+.tech-boot strong,.tech-boot__cursor{color:#22d3ee!important}
+@media(min-width:768px){
+ .tl-item--right .tl-node{left:-72px!important;right:auto!important}
+ .tl-item--left .tl-node{right:-72px!important;left:auto!important}
+ .tl-item--right .tl-leaf{left:0!important;right:auto!important;transform-origin:0 50%!important;transform:scale(.25) rotate(-40deg)!important}
+ .tl-item--right.is-active .tl-leaf{transform:scale(1) rotate(0)!important}
+ .tl-item--left .tl-leaf{right:0!important;left:auto!important;transform-origin:100% 50%!important;transform:scaleX(-1) scale(.25) rotate(-40deg)!important}
+ .tl-item--left.is-active .tl-leaf{transform:scaleX(-1) scale(1) rotate(0)!important}
+}
+@media(max-width:767px){
+ .tl-node{left:-44px!important;right:auto!important}
+ .tl-leaf{left:0!important;right:auto!important;transform-origin:0 50%!important;transform:scale(.25) rotate(-40deg)!important}
+ .tl-item.is-active .tl-leaf{transform:scale(1) rotate(0)!important}
+}
