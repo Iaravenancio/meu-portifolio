@@ -226,3 +226,29 @@ section h2 .text-gradient, section h2 [class*="text-gradient"] {
 @media(min-width:1280px){.tech-section-progress{display:flex}section[id]>.mx-auto.max-w-6xl{width:min(1100px,calc(100% - 192px));max-width:1100px}}
 @media(max-width:1279px){.tech-section-progress{display:none}}
 @media(prefers-reduced-motion:reduce){.tech-section-progress a span{transition:none}}
+
+
+/* Final refinements from visual review */
+.hero-name{display:flex;flex-direction:column;align-items:center;gap:0;font-size:clamp(3rem,9vw,6.5rem);line-height:.98;letter-spacing:-.045em;color:#f5f8fa}
+.hero-name>span{display:block;color:#f5f8fa!important;background:none!important;-webkit-text-fill-color:#f5f8fa!important}
+.hero-flower{height:100%;inset:0;display:flex;align-items:center;justify-content:center;pointer-events:none}
+.hero-flower canvas,.hero-flower svg{height:100%;max-height:100%;width:auto;max-width:100%;object-fit:contain}
+.hero-shell::before{opacity:.45}
+.tl-item--right .tl-leaf{transform-origin:0 50%;transform:scale(.25) rotate(-40deg)}
+.tl-item--right.is-active .tl-leaf{transform:scale(1) rotate(0)}
+@media(min-width:768px){
+ .tl-item--left .tl-leaf{transform-origin:100% 50%;transform:scaleX(-1) scale(.25) rotate(-40deg)}
+ .tl-item--left.is-active .tl-leaf{transform:scaleX(-1) scale(1) rotate(0)}
+}
+@media(max-width:767px){
+ .tl-item--left .tl-leaf{transform-origin:0 50%;transform:scale(.25) rotate(-40deg)}
+ .tl-item--left.is-active .tl-leaf{transform:scale(1) rotate(0)}
+}
+.tech-section-progress{width:12px;min-width:12px;padding:10px 0;gap:1.1rem;background:transparent;box-shadow:none}
+.tech-section-progress::before{left:5px;width:1px;background:rgba(34,211,238,.22)}
+.tech-section-progress__fill{left:5px;width:1px;background:linear-gradient(180deg,#22d3ee,#3b9cff);box-shadow:0 0 4px rgba(34,211,238,.45)}
+.tech-section-progress a{position:relative;width:12px;height:12px;min-width:12px;flex:0 0 12px;padding:0;border:0;background:transparent}
+.tech-section-progress a i{width:5px;height:5px;min-width:5px;border:1px solid rgba(34,211,238,.5);background:#04070b;transform:rotate(45deg);box-shadow:none;transition:all .2s}
+.tech-section-progress a.is-active i{width:7px;height:7px;background:#22d3ee;border-color:#22d3ee;box-shadow:0 0 7px rgba(34,211,238,.8)}
+.tech-section-progress a span{left:18px;font-size:.58rem;padding:5px 7px}
+@media(prefers-reduced-motion:reduce){.hero-name>span{-webkit-text-fill-color:#f5f8fa!important}}
