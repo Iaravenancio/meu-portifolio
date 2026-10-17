@@ -59,9 +59,7 @@ section[id] { scroll-margin-top: 6rem; }
 .tech-flower-cursor__svg circle { fill: #fff; }
 .tech-flower-cursor.is-hovering .tech-flower-cursor__svg { transform: scale(1.65); animation-duration: 3s; }
 @keyframes tech-cursor-spin { to { rotate: 360deg; } }
-@media (min-width: 1181px) {
-  @media (pointer: fine) { body, body a, body button { cursor: none; } }
-}
+@media (pointer: fine) { body, body a, body button { cursor: none; } }
 @media (max-width: 1180px) { .tech-section-progress { display: none; } }
 @media (pointer: coarse) { .tech-flower-cursor { display: none; } }
 @media (prefers-reduced-motion: reduce) {
