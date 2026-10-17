@@ -29,7 +29,7 @@ export function Experience() {
       const fillPx = clamp(trigger - rect.top, 0, rect.height);
       tl.style.setProperty("--fill", fillPx + "px");
       items.forEach((item) => {
-        const leafY = item.offsetTop + 28;
+        const leafY = item.offsetTop + 26;
         item.classList.toggle("is-active", fillPx >= leafY);
       });
     }
@@ -47,7 +47,7 @@ export function Experience() {
           <div aria-hidden="true" className="tl-track"><span className="tl-fill" /><span className="tl-seiva" /></div>
           {items.map((item, index) => (
             <article key={item.role} className={`tl-item ${index % 2 ? "tl-item--left" : "tl-item--right"}`}>
-              <div className="tl-node" aria-hidden="true"><Leaf />{item.current && <span className="tl-current-dot" />}</div>
+              <div className="tl-node" aria-hidden="true"><span className="node" /> <Leaf />{item.current && <span className="tl-current-dot" />}</div>
               <div className="tl-card" data-spot>
                 <div className="tl-card__topline" />
                 <div className="tl-date">{item.period}</div>
