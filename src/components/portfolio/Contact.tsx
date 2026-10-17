@@ -6,7 +6,7 @@ export function Contact() {
   return (
     <section id="contato" className="relative px-4 py-32 sm:px-6">
       <div className="mx-auto max-w-2xl">
-        <SectionHeading eyebrow="contato" align="center" title={<>Tem uma ideia? Vamos fazer ela <span className="text-gradient">florescer</span>.</>} />
+        <SectionHeading eyebrow="contato" align="center" title={<>Entre em contato comigo</span>.</>} />
 
         <div className="contact-cards space-y-3">
           {[
