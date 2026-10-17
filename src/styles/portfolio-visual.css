@@ -274,3 +274,44 @@ section h2 .text-gradient, section h2 [class*="text-gradient"] {
  .tl-leaf{left:0!important;right:auto!important;transform-origin:0 50%!important;transform:scale(.25) rotate(-40deg)!important}
  .tl-item.is-active .tl-leaf{transform:scale(1) rotate(0)!important}
 }
+
+/* Exact-reference adjustments: fixed hero lines, attached leaves, active section label */
+.hero-name{font-size:clamp(2.3rem,8vw,6rem)!important;line-height:1.02!important;gap:0!important;letter-spacing:-.035em!important;white-space:normal!important;color:#fff!important}
+.hero-name .ln{display:block!important;white-space:nowrap!important;color:#fff!important;background:none!important;-webkit-text-fill-color:#fff!important}
+@media(max-width:420px){.hero-name{font-size:clamp(2.3rem,8vw,6rem)!important}}
+/* Each timeline node sits on the stem; the leaf's SVG base touches its center. */
+.tl-node{width:10px!important;height:10px!important;display:flex;align-items:center;justify-content:center;top:26px!important;z-index:5}
+.tl-node .node{position:absolute;inset:0;border:1px solid rgba(34,211,238,.65);border-radius:50%;background:#04070b;transition:background .25s,box-shadow .25s}
+.tl-item.is-active .tl-node .node{background:#fff;border-color:#fff;box-shadow:0 0 6px #fff,0 0 13px #22d3ee}
+.tl-leaf{left:0!important;top:-18px!important;width:64px!important;height:46px!important;transform-origin:0 23px!important;transform:scale(.25) rotate(-40deg)!important}
+.tl-item.is-active .tl-leaf{transform:scale(1) rotate(0)!important}
+.tl-leaf__outline{stroke:#22d3ee!important;stroke-width:1.3!important;fill:none!important}
+.tl-leaf__vein{stroke:#22d3ee!important;stroke-width:1.1!important}
+.tl-item.is-active .tl-leaf__outline{fill:url(#tl-leaf-fill)!important}
+@media(min-width:768px){
+ .tl-item--right .tl-node{left:-77px!important;right:auto!important}
+ .tl-item--left .tl-node{right:-77px!important;left:auto!important}
+ .tl-item--right .tl-leaf{left:0!important;right:auto!important;transform-origin:0 23px!important;transform:scale(.25) rotate(-40deg)!important}
+ .tl-item--right.is-active .tl-leaf{transform:scale(1) rotate(0)!important}
+ .tl-item--left .tl-leaf{left:auto!important;right:0!important;transform-origin:64px 23px!important;transform:scaleX(-1) scale(.25) rotate(-40deg)!important}
+ .tl-item--left.is-active .tl-leaf{transform:scaleX(-1) scale(1) rotate(0)!important}
+}
+@media(max-width:767px){
+ .tl-node{left:-49px!important;right:auto!important}
+ .tl-leaf{left:0!important;right:auto!important;transform-origin:0 23px!important;transform:scale(.25) rotate(-40deg)!important}
+ .tl-item.is-active .tl-leaf{transform:scale(1) rotate(0)!important}
+}
+.tech-section-progress{left:16px!important;z-index:45!important}
+.tech-section-progress::before{background:rgba(34,211,238,.2)!important}
+.tech-section-progress__fill{background:linear-gradient(#22d3ee,#3b9cff)!important;box-shadow:0 0 8px rgba(59,156,255,.55)!important}
+.tech-section-progress a span{opacity:0!important;visibility:hidden!important;transform:translateX(-5px)!important;color:#3b9cff!important}
+.tech-section-progress a.is-active span{opacity:1!important;visibility:visible!important;transform:none!important}
+.tech-section-progress a.is-active{color:#3b9cff!important}
+.tech-section-progress a i{border-color:#3b9cff!important}
+.tech-section-progress a.is-active i{background:#3b9cff!important;border-color:#3b9cff!important;box-shadow:0 0 10px #3b9cff!important}
+@media(min-width:1240px){
+ .tech-section-progress{display:flex!important}
+ section[id]:not(#top)>.mx-auto.max-w-6xl{width:calc(100% - 380px)!important;max-width:none!important;margin-left:190px!important;margin-right:190px!important}
+}
+@media(max-width:1239px){.tech-section-progress{display:none!important}}
+@media(prefers-reduced-motion:reduce){.tl-leaf,.tl-item.is-active .tl-leaf{transform:scale(1)!important;opacity:1!important;filter:drop-shadow(0 0 8px rgba(34,211,238,.8))!important;transition:none!important}}
