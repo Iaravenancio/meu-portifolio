@@ -10,6 +10,7 @@ import { Certifications } from "@/components/portfolio/Certifications";
 import { Contact } from "@/components/portfolio/Contact";
 import { Footer } from "@/components/portfolio/Footer";
 import { PortfolioEffects } from "@/components/portfolio/PortfolioEffects";
+import { PortfolioChrome } from "@/components/portfolio/PortfolioChrome";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -38,6 +39,7 @@ function Index() {
     <main className="dark relative min-h-screen bg-background text-foreground">
       <NeuralBackground />
       <PortfolioEffects />
+      <PortfolioChrome />
       <Nav />
       <Hero />
       <About />
