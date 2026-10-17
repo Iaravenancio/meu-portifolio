@@ -18,10 +18,6 @@ export function Hero() {
           <span className="relative flex h-2 w-2"><span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-neon-cyan opacity-75" /><span className="relative inline-flex h-2 w-2 rounded-full bg-neon-cyan" /></span>
           Disponível para novas oportunidades
         </motion.div>
-        <motion.p initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: .7, delay: .1 }}
-          className="font-mono text-[10px] uppercase tracking-[.34em] text-neon-cyan sm:text-xs">
-          <span className="mr-2 text-neon-purple">01 /</span> Desenvolvendo o próximo passo
-        </motion.p>
         <motion.h1 aria-label="Iara Venâncio Ribeiro" initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: .7, delay: .15 }}
           className="w-full font-display [--stroke-text-height:52px] sm:[--stroke-text-height:68px] md:[--stroke-text-height:82px] lg:[--stroke-text-height:96px]">
           <StrokeText text={NAME_LINE_1} />
