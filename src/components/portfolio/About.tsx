@@ -14,7 +14,6 @@ export function About() {
             <p>Minha experiência vem do estágio em Tecnologia e Processos, onde organizei documentação, padronizei procedimentos e participei da automação de tarefas repetitivas, e de projetos como uma API de pontos de coleta com princípios ESG e o backend de uma plataforma de inovação corporativa.</p>
             <p>Meu diferencial é a curiosidade e a rapidez para aprender. Estou em busca de novas oportunidades para crescer em um time de tecnologia e continuar evoluindo.</p>
           </motion.div>
-ion.aside>
         </div>
       </div>
     </section>
