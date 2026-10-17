@@ -7,7 +7,7 @@ export function Footer() {
         </div>
         <div className="flex items-center gap-2">
           <span className="h-1.5 w-1.5 rounded-full bg-neon-cyan animate-pulse" />
-          <span className="font-mono uppercase tracking-widest">system online</span>
+          <span className="font-mono tracking-widest">em floração</span>
         </div>
       </div>
     </footer>
