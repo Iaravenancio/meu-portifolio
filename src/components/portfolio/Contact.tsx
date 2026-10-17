@@ -6,9 +6,9 @@ export function Contact() {
   return (
     <section id="contato" className="relative px-4 py-32 sm:px-6">
       <div className="mx-auto max-w-2xl">
-        <SectionHeading eyebrow="contato" align="center" />
+        <SectionHeading eyebrow="contato" align="center" title={<>Tem uma ideia? Vamos fazer ela <span className="text-gradient">florescer</span>.</>} />
 
-        <div className="space-y-3">
+        <div className="contact-cards space-y-3">
           {[
             { icon: Linkedin, label: "LinkedIn", value: "iara-venancio", href: "https://www.linkedin.com/in/iara-venancio/" },
             { icon: Github, label: "GitHub", value: "Iaravenancio", href: "https://github.com/Iaravenancio" },
@@ -24,7 +24,7 @@ export function Contact() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: i * 0.08 }}
-              className="group flex items-center gap-4 rounded-2xl glass p-4 transition hover:-translate-y-0.5 hover:border-white/20"
+              className="contact-card group relative flex items-center gap-4 overflow-hidden rounded-2xl border border-white/10 bg-white/[0.025] p-4 transition hover:-translate-y-0.5 hover:border-white/20"
             >
               <div className="grid h-10 w-10 place-items-center rounded-lg bg-gradient-to-br from-neon-blue/20 to-neon-purple/20 text-neon-cyan ring-1 ring-white/10">
                 <c.icon className="h-4 w-4" />
