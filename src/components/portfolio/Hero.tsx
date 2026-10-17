@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
 import { ArrowDown, Mail, Github, Linkedin, Sparkles } from "lucide-react";
-import { StrokeText } from "./StrokeText";
 import { TechFlower } from "./TechFlower";
 
 const NAME_LINE_1 = "Iara Venâncio";
@@ -19,9 +18,8 @@ export function Hero() {
           Disponível para novas oportunidades
         </motion.div>
         <motion.h1 aria-label="Iara Venâncio Ribeiro" initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: .7, delay: .15 }}
-          className="w-full font-display [--stroke-text-height:52px] sm:[--stroke-text-height:68px] md:[--stroke-text-height:82px] lg:[--stroke-text-height:96px]">
-          <StrokeText text={NAME_LINE_1} />
-          <StrokeText text={NAME_LINE_2} gradient={["#38BDF8", "#A855F7"]} strokeColor="#38BDF8" delay={.35} />
+          className="hero-name w-full font-display">
+          <span>{NAME_LINE_1}</span><span>{NAME_LINE_2}</span>
         </motion.h1>
         <motion.p initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: .7, delay: .25 }}
           className="max-w-xl text-base leading-relaxed text-muted-foreground sm:text-lg">
