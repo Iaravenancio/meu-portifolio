@@ -2,9 +2,6 @@ import { motion } from "framer-motion";
 import { ArrowDown, Mail, Github, Linkedin, Sparkles } from "lucide-react";
 import { TechFlower } from "./TechFlower";
 
-const NAME_LINE_1 = "Iara Venâncio";
-const NAME_LINE_2 = "Ribeiro";
-
 export function Hero() {
   return (
     <section id="top" className="hero-shell relative flex min-h-screen items-center justify-center overflow-hidden px-4 py-24 sm:px-6">
@@ -19,13 +16,11 @@ export function Hero() {
         </motion.div>
         <motion.h1 aria-label="Iara Venâncio Ribeiro" initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: .7, delay: .15 }}
           className="hero-name w-full font-display">
-          <span>{NAME_LINE_1}</span><span>{NAME_LINE_2}</span>
+          <span>Iara Venâncio</span><span>Ribeiro</span>
         </motion.h1>
         <motion.p initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: .7, delay: .25 }}
-          className="max-w-xl text-base leading-relaxed text-muted-foreground sm:text-lg">
-          <span className="font-mono text-xs uppercase tracking-[.2em] text-foreground/90 sm:text-sm">Estudante de Análise &amp; Desenvolvimento de Sistemas</span>
-          <br />
-          <span className="mt-3 inline-block">Apaixonada por Java, automações e por transformar problemas em soluções digitais com impacto real.</span>
+          className="max-w-2xl text-base leading-relaxed text-muted-foreground sm:text-lg">
+          Desenvolvedora em formação, focada em backend com Java e automação de processos. Transformo problemas em soluções digitais com impacto real.
         </motion.p>
         <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: .7, delay: .4 }}
           className="mt-3 flex flex-wrap items-center justify-center gap-3">
