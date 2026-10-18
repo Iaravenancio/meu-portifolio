@@ -51,32 +51,59 @@ export function PortfolioEffects() {
       const textTargets = Array.from(document.querySelectorAll<HTMLElement>(
         "h1, h2, article h3"
       )).filter((el) => el.textContent?.trim() && !el.dataset.scrambleDone);
-      const originalText = new Map<HTMLElement, string>();
-      textTargets.forEach((el) => originalText.set(el, el.textContent ?? ""));
-      const scramble = (el: HTMLElement, text: string) => {
-        if (!text.trim()) return;
+
+      // Collects only the text nodes, so child elements (like the hero name spans) are never removed.
+      const getTextNodes = (root: HTMLElement) => {
+        const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT);
+        const nodes: Text[] = [];
+        while (walker.nextNode()) {
+          const node = walker.currentNode as Text;
+          if (node.nodeValue?.trim()) nodes.push(node);
+        }
+        return nodes;
+      };
+
+      const scramble = (el: HTMLElement) => {
+        const parts = getTextNodes(el).map((node) => ({ node, text: node.nodeValue ?? "" }));
+        if (!parts.length) return;
         el.dataset.scrambleDone = "true";
+
+        // starting offset of each node, so the text resolves in reading order
+        let offset = 0;
+        const items = parts.map((p) => {
+          const item = { ...p, start: offset };
+          offset += p.text.length;
+          return item;
+        });
+        const total = offset;
+
         let frame = 0;
-        const total = text.length;
         const interval = window.setInterval(() => {
-          el.textContent = [...text].map((char, i) => {
-            if (char === " " || i < frame) return char;
-            return SCRAMBLE[Math.floor(Math.random() * SCRAMBLE.length)];
-          }).join("");
+          items.forEach(({ node, text, start }) => {
+            node.nodeValue = [...text].map((char, i) => {
+              if (char === " " || start + i < frame) return char;
+              return SCRAMBLE[Math.floor(Math.random() * SCRAMBLE.length)];
+            }).join("");
+          });
           frame += 1.4;
           if (frame >= total) {
-            el.textContent = text;
+            items.forEach(({ node, text }) => { node.nodeValue = text; });
             window.clearInterval(interval);
           }
         }, 24);
-        cleanups.push(() => window.clearInterval(interval));
+
+        // if the component unmounts mid-animation, restore the original text
+        cleanups.push(() => {
+          window.clearInterval(interval);
+          items.forEach(({ node, text }) => { node.nodeValue = text; });
+        });
       };
+
       const textObserver = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
           if (!entry.isIntersecting) return;
           const el = entry.target as HTMLElement;
-          const text = originalText.get(el) ?? "";
-          scramble(el, text);
+          scramble(el);
           textObserver.unobserve(el);
         });
       }, { threshold: .5 });
