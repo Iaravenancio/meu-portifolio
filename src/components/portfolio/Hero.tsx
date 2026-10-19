@@ -20,7 +20,7 @@ export function Hero() {
           <span className="ln block whitespace-nowrap">Ribeiro</span>
         </motion.h1>
         <motion.p initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: .7, delay: .25 }}
-          className="max-w-2xl text-base leading-relaxed text-muted-foreground sm:text-lg">
+          className="hero-lead max-w-2xl text-base leading-relaxed sm:text-lg">
           Desenvolvedora em formação, focada em backend com Java e automação de processos. Transformo problemas em soluções digitais com impacto real.
         </motion.p>
         <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: .7, delay: .4 }}
