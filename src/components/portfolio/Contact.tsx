@@ -14,7 +14,7 @@ export function Contact() {
       <div className="grid h-10 w-10 place-items-center rounded-lg border border-white/10 bg-white/[0.03] text-neon-cyan"><c.icon className="h-4 w-4" /></div><div className="min-w-0 flex-1"><div className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground">{c.label}</div><div className="truncate text-sm font-medium text-white">{c.value}</div></div><ArrowHint />
     </motion.a>)}
     <motion.a href="https://wa.me/5512996780772" target="_blank" rel="noopener noreferrer" initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: .4, delay: contacts.length * .08 }} data-spot className="contact-card group relative flex items-center gap-4 overflow-hidden rounded-2xl border border-white/10 p-4 transition hover:-translate-y-0.5 hover:border-neon-cyan/40" aria-label="Entrar em contato pelo WhatsApp">
-      <div className="grid h-10 w-10 place-items-center rounded-lg border border-white/10 bg-white/[0.03] text-neon-cyan"><MessageCircle className="h-4 w-4" /></div><div className="min-w-0 flex-1"><div className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground">WhatsApp</div><div className="text-sm font-medium text-white">Enviar mensagem</div></div>
+      <div className="grid h-10 w-10 place-items-center rounded-lg border border-white/10 bg-white/[0.03] text-neon-cyan"><MessageCircle className="h-4 w-4" /></div><div className="min-w-0 flex-1"><div className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground">WhatsApp</div></div><ArrowHint />
     </motion.a></div>
   </div></section>;
 }
