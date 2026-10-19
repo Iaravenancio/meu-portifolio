@@ -278,3 +278,10 @@ section h2::after {
   .tech-section-progress a span { transition: none; }
 }
 
+
+/* Stack cards: altura natural por conteúdo, sem esticar os cards menores */
+#stack .grid > div {
+  height: fit-content !important;
+  min-height: 0 !important;
+  align-self: start !important;
+}
