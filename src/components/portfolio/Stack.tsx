@@ -40,8 +40,8 @@ export function Stack() {
             <div className="flex items-center justify-center gap-2"><span className={`h-1.5 w-1.5 rounded-full bg-gradient-to-r ${group.color} shadow-[0_0_9px_currentColor]`} /><span className="font-mono text-[10px] uppercase tracking-[.2em] text-muted-foreground">0{i + 1}</span></div>
             <h3 className="mt-3 text-center font-display text-lg font-semibold text-white">{group.title}</h3>
             <div className="mt-5 flex flex-1 flex-col justify-center">
-              {group.items ? <ul className="w-full space-y-2">{group.items.map(item => <BulletItem key={item} item={item} color={group.color} />)}</ul> :
-                <div className="space-y-4">{group.subgroups!.map(sub => <div key={sub.label}><div className="mb-2 text-center font-mono text-[10px] uppercase tracking-[.18em] text-muted-foreground/70">{sub.label}</div><ul className="w-full space-y-2">{sub.items.map(item => <BulletItem key={item} item={item} color={group.color} />)}</ul></div>)}</div>}
+              {group.items ? <ul className="mx-auto w-fit space-y-2">{group.items.map(item => <BulletItem key={item} item={item} color={group.color} />)}</ul> :
+                <div className="space-y-4">{group.subgroups!.map(sub => <div key={sub.label}><div className="mb-2 text-center font-mono text-[10px] uppercase tracking-[.18em] text-muted-foreground/70">{sub.label}</div><ul className="mx-auto w-fit space-y-2">{sub.items.map(item => <BulletItem key={item} item={item} color={group.color} />)}</ul></div>)}</div>}
             </div>
             <div className={`pointer-events-none absolute -bottom-16 -right-16 h-40 w-40 rounded-full bg-gradient-to-br ${group.color} opacity-0 blur-3xl transition group-hover:opacity-20`} />
           </motion.div>)}
