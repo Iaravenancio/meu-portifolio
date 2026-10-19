@@ -13,8 +13,9 @@ function Leaf() {
 
 export function Experience() {
   useEffect(() => {
-    const tl = document.getElementById("timeline");
-    if (!tl) return;
+    const tlNode = document.getElementById("timeline");
+    if (!tlNode) return;
+    const tl = tlNode;
     const items = [...tl.querySelectorAll<HTMLElement>(".tl-item")];
     const clamp = (v: number, a: number, b: number) => Math.max(a, Math.min(b, v));
     const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
