@@ -297,10 +297,3 @@ section h2::after {
   background: radial-gradient(ellipse at center, rgba(4,7,11,.62), transparent 72%);
   filter: blur(8px);
 }
-
-/* Stack cards: altura natural por conteúdo, sem esticar os cards menores */
-#stack .grid > div {
-  height: fit-content !important;
-  min-height: 0 !important;
-  align-self: start !important;
-}
