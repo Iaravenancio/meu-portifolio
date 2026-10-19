@@ -33,9 +33,9 @@ export function Stack() {
     <section id="stack" className="relative px-4 py-32 sm:px-6">
       <div className="mx-auto max-w-6xl">
         <SectionHeading eyebrow="stack tecnológica" title="Tecnologias que uso em estudos, projetos e automações." />
-        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid items-start gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {stack.map((group, i) => <motion.div key={group.title} initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-50px" }} transition={{ duration: .5, delay: i * .1 }}
-            data-spot className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-white/10 bg-white/[0.025] p-6 transition hover:-translate-y-1">
+            data-spot className="group relative flex self-start flex-col overflow-hidden rounded-2xl border border-white/10 bg-white/[0.025] p-6 transition hover:-translate-y-1">
             <div className={`absolute inset-x-0 top-0 h-px bg-gradient-to-r ${group.color}`} />
             <div className="flex items-center gap-2"><span className={`h-1.5 w-1.5 rounded-full bg-gradient-to-r ${group.color} shadow-[0_0_9px_currentColor]`} /><span className="font-mono text-[10px] uppercase tracking-[.2em] text-muted-foreground">0{i + 1}</span></div>
             <h3 className="mt-3 font-display text-lg font-semibold text-white">{group.title}</h3>

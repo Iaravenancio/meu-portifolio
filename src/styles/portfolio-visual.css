@@ -278,6 +278,7 @@ section h2::after {
   .tech-section-progress a span { transition: none; }
 }
 
+
 /* Hero: parágrafo legível sobre o brilho da flor */
 .hero-lead {
   position: relative;
@@ -285,10 +286,21 @@ section h2::after {
   font-weight: 500;
   text-shadow: 0 1px 2px rgba(0,0,0,.9), 0 0 16px rgba(4,7,11,.95), 0 0 32px rgba(4,7,11,.8);
 }
-/* mancha escura bem suave atrás do texto (fica atrás das letras, não mexe na flor) */
+
+/* Mancha escura suave atrás do texto */
 .hero-lead::before {
-  content: ""; position: absolute; inset: -12px -24px; z-index: -1; pointer-events: none;
+  content: "";
+  position: absolute;
+  inset: -12px -24px;
+  z-index: -1;
+  pointer-events: none;
   background: radial-gradient(ellipse at center, rgba(4,7,11,.62), transparent 72%);
   filter: blur(8px);
 }
 
+/* Stack cards: altura natural por conteúdo, sem esticar os cards menores */
+#stack .grid > div {
+  height: fit-content !important;
+  min-height: 0 !important;
+  align-self: start !important;
+}
