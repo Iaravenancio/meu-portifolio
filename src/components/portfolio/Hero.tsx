@@ -21,7 +21,7 @@ export function Hero() {
         </motion.h1>
         <motion.p initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: .7, delay: .25 }}
           className="hero-lead max-w-2xl text-base leading-relaxed sm:text-lg">
-          Desenvolvedora em formação, focada em backend com Java e automação de processos. Transformo problemas em soluções digitais com impacto real.
+          Desenvolvedora em formação, construindo minha trajetória em tecnologia com foco em Java, backend e Banco de Dados. Busco transformar conhecimento em prática por meio de projetos e aprendizado contínuo.
         </motion.p>
         <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: .7, delay: .4 }}
           className="mt-3 flex flex-wrap items-center justify-center gap-3">
