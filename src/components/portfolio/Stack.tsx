@@ -12,7 +12,7 @@ const stack: StackGroup[] = [
   {
     title: "Desenvolvimento Web",
     color: "from-neon-blue to-neon-cyan",
-    items: ["HTML5", "CSS3", "JavaScript", "Git", "GitHub"],
+    items: ["HTML5", "CSS3", "JavaScript","React", "TypeScript", "Tailwind CSS", "Consumo de APIs REST", "Git", "GitHub"],
   },
   {
     title: "Backend",
